@@ -272,10 +272,14 @@ section {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: 24px;
     letter-spacing: 0;
+  }
+
+  h2 {
+    font-size: 16px;
   }
 
   nav {
@@ -285,14 +289,25 @@ section {
   .intro h1,
   .outro h1 {
     width: 100%;
+    top: 76%;
+    left: unset;
+    font-size: 24px;
+  }
+
+  .intro h2,
+  .outro h2 {
+    width: 100%;
+    left: unset;
+    font-size: 16px;
+    top: 86%;
   }
 
   .slider-title {
-    top: 5rem;
+    top: 76%;
     left: 0;
     transform: none;
     width: 100%;
-    padding: 2rem;
+    padding: 12px;
   }
 
   .slider-indicator {
