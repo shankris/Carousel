@@ -288,7 +288,7 @@ section {
 
   .intro h1,
   .outro h1 {
-    width: 100%;
+    width: 90%;
     top: 76%;
     left: unset;
     font-size: 24px;
@@ -296,7 +296,7 @@ section {
 
   .intro h2,
   .outro h2 {
-    width: 100%;
+    width: 90%;
     left: unset;
     font-size: 16px;
     top: 86%;
