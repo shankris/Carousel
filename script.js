@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Lenis smooth scroll
   const lenis = new Lenis();
+
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // SLIDES DATA
   const slides = [
     {
-      title: "Gourmet Cookie Collection",
+      title: "Our Best Seller",
       subhead: "Elegant, small-batch perfection. Available in beautifully boxed sets, ideal for corporate gifts or party favors.",
       image: "public/01.png",
     },
@@ -38,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "public/05.png",
     },
     {
-      title: "The Classic Dry Cake",
-      subhead: "Simple perfection. A dense, moist loaf, generously studded and topped with a mix of toasted almonds, cashews, and raisins.",
+      title: "The Showstopper Dessert Pyramid",
+      subhead: "Elevate your event tables with our signature almond mini-bites. Striking presentation and irresistible flavor for every guest.",
       image: "public/06.png",
     },
     {
-      title: "Blueberry Muffins: Baked Just for You",
-      subhead: "Never pre-made. Order your batch 24 hours in advance to enjoy these moist, fruit-packed delights, baked fresh for your pickup or delivery.",
+      title: "The Ultimate Fresh Fruit Delight",
+      subhead: "A light vanilla sponge layered with fresh cream and topped with an abundance of seasonal, hand-picked fruits and berries.",
       image: "public/07.png",
     },
   ];
