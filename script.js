@@ -65,9 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // ❗ FIXED PIN DISTANCE (Important)
-  const pinDistance = window.innerHeight * slides.length;
-
   const progressBar = document.querySelector(".slider-progress");
   const sliderImages = document.querySelector(".slider-images");
   const sliderTitle = document.querySelector(".slider-title");
@@ -75,6 +72,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeSlide = 0;
   let currentSplit = null;
+  let sliderTrigger = null;
+
+  // -----------------------
+  // ACCURATE MOBILE VIEWPORT HEIGHT
+  // -----------------------
+  function getViewportHeight() {
+    if (window.visualViewport?.height) return window.visualViewport.height;
+    return window.innerHeight;
+  }
+
+  // -----------------------
+  // PIN DISTANCE CALC
+  // -----------------------
+  function getPinDistance() {
+    return getViewportHeight() * slides.length;
+  }
+
+  // -----------------------
+  // CREATE / REFRESH TRIGGER
+  // -----------------------
+  function createOrRefreshSliderTrigger() {
+    const pinDistance = getPinDistance();
+
+    if (sliderTrigger) {
+      sliderTrigger.kill();
+      gsap.set(".slider", { clearProps: "all" });
+    }
+
+    sliderTrigger = ScrollTrigger.create({
+      trigger: ".slider",
+      start: "top top",
+      end: `+=${pinDistance}`,
+      scrub: 1,
+      pin: true,
+      pinSpacing: true,
+      onUpdate: (self) => {
+        gsap.set(progressBar, { scaleY: self.progress });
+
+        const currentSlide = Math.floor(self.progress * slides.length);
+        if (currentSlide !== activeSlide && currentSlide < slides.length) {
+          activeSlide = currentSlide;
+          animateNewSlide(activeSlide);
+        }
+      },
+    });
+  }
 
   function createIndices() {
     sliderIndices.innerHTML = "";
@@ -99,6 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return slide.image;
   }
 
+  // -----------------------
+  // SLIDE IMAGE LOADING + FADE
+  // -----------------------
   function animateNewSlide(index) {
     const slide = slides[index];
     const lowSrc = slide.imageLow;
@@ -127,6 +173,10 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.6,
         onComplete: () => lowImg.remove(),
       });
+
+      // when a new final image loads → recalc pin distance
+      createOrRefreshSliderTrigger();
+      ScrollTrigger.refresh();
     };
 
     const allMedia = sliderImages.querySelectorAll("img, video");
@@ -183,22 +233,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // INIT
   createIndices();
+  createOrRefreshSliderTrigger();
 
-  ScrollTrigger.create({
-    trigger: ".slider",
-    start: "top top",
-    end: `+=${pinDistance}px`,
-    scrub: 1,
-    pin: true,
-    onUpdate: (self) => {
-      gsap.set(progressBar, { scaleY: self.progress });
+  // REFRESH trigger after everything loads
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      createOrRefreshSliderTrigger();
+      ScrollTrigger.refresh();
+    }, 50);
+  });
 
-      const currentSlide = Math.floor(self.progress * slides.length);
-      if (currentSlide !== activeSlide && currentSlide < slides.length) {
-        activeSlide = currentSlide;
-        animateNewSlide(activeSlide);
-      }
-    },
+  // Recalculate on resize
+  let rTO;
+  window.addEventListener("resize", () => {
+    clearTimeout(rTO);
+    rTO = setTimeout(() => {
+      createOrRefreshSliderTrigger();
+      ScrollTrigger.refresh();
+    }, 120);
   });
 });

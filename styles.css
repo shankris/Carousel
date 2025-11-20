@@ -119,7 +119,7 @@ section {
   width: 100%;
   height: 100dvh;
   position: relative;
-  padding-top: 100vh;
+  padding-top: 0;
   color: #fff;
 }
 
