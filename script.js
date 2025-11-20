@@ -13,6 +13,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   gsap.ticker.lagSmoothing(0);
 
+  // FORCE ScrollTrigger to calculate positions immediately
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
+  });
+
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
+
   // DOM elements
   const progressBar = document.querySelector(".slider-progress");
   const sliderImages = document.querySelector(".slider-images");
