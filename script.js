@@ -36,8 +36,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
       sliderIndices.appendChild(indicatorElement);
 
-      gsap.set(indicatorElement.querySelector(".index"), { opacity: index === 0 ? 1 : 0.35 });
-      gsap.set(indicatorElement.querySelector(".marker"), { scaleX: index === 0 ? 1 : 0 });
+      gsap.set(indicatorElement.querySelector(".index"), {
+        opacity: index === 0 ? 1 : 0.35,
+      });
+      gsap.set(indicatorElement.querySelector(".marker"), {
+        scaleX: index === 0 ? 1 : 0,
+      });
     });
   }
 
@@ -59,8 +63,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     gsap.set(newSliderImage, { opacity: 0, scale: 1.1 });
     sliderImages.appendChild(newSliderImage);
 
-    gsap.to(newSliderImage, { opacity: 1, duration: 0.5, ease: "power2.out" });
-    gsap.to(newSliderImage, { scale: 1, duration: 1, ease: "power2.out" });
+    gsap.to(newSliderImage, {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+
+    gsap.to(newSliderImage, {
+      scale: 1,
+      duration: 1,
+      ease: "power2.out",
+    });
 
     const allImages = sliderImages.querySelectorAll("img");
     if (allImages.length > 3) {
@@ -72,18 +85,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     animateIndicators(index);
   }
 
-  // ----- Animate Title -----
+  // ----- Animate Title + Subhead -----
   function animateNewTitle(index) {
     if (currentSplit) currentSplit.revert();
 
-    sliderTitle.innerHTML = `<h1>${slides[index].title}</h1>`;
+    // NEW WRAPPER FOR TITLE + SUBHEAD
+    sliderTitle.innerHTML = `
+      <div class="title-wrapper">
+        <h1 class="mainTitle">${slides[index].title}</h1>
+        <h2 class="subHead">${slides[index].subhead}</h2>
+      </div>
+    `;
 
-    currentSplit = new SplitText(sliderTitle.querySelector("h1"), {
+    const titleEl = sliderTitle.querySelector(".mainTitle");
+    const subheadEl = sliderTitle.querySelector(".subHead");
+
+    // Split only the title
+    currentSplit = new SplitText(titleEl, {
       type: "lines",
       linesClass: "line",
       mask: "lines",
     });
 
+    // Animate title lines
     gsap.set(currentSplit.lines, { yPercent: 100, opacity: 0 });
     gsap.to(currentSplit.lines, {
       yPercent: 0,
@@ -92,6 +116,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       stagger: 0.1,
       ease: "power3.out",
     });
+
+    // Animate subhead AFTER title
+    gsap.fromTo(
+      subheadEl,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        delay: 0.6,
+        ease: "power2.out",
+      }
+    );
   }
 
   // ----- Animate Indicators -----
@@ -101,14 +138,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       const marker = indicator.querySelector(".marker");
       const number = indicator.querySelector(".index");
 
-      gsap.to(number, { opacity: i === index ? 1 : 0.5, duration: 0.3 });
-      gsap.to(marker, { scaleX: i === index ? 1 : 0, duration: 0.3 });
+      gsap.to(number, {
+        opacity: i === index ? 1 : 0.5,
+        duration: 0.3,
+      });
+
+      gsap.to(marker, {
+        scaleX: i === index ? 1 : 0,
+        duration: 0.3,
+      });
     });
   }
 
   // Init indices
   createIndices();
-  console.log(gsap, gsap.ScrollTrigger, gsap.SplitText);
 
   // ----- ScrollTrigger -----
   const pinDistance = window.innerHeight * slides.length;
