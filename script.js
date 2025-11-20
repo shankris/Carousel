@@ -1,52 +1,73 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Register plugins (no imports needed)
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  // Lenis smooth scroll
   const lenis = new Lenis();
-
   lenis.on("scroll", ScrollTrigger.update);
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
 
-  // SLIDES DATA
+  // DETECT DEVICE
+  const screenWidth = window.innerWidth;
+  const device = screenWidth < 600 ? "mobile" : screenWidth < 1024 ? "tablet" : "desktop";
+
+  // SLIDES DATA (update paths accordingly)
   const slides = [
     {
       title: "Our Best Seller",
       subhead: "Elegant, small-batch perfection. Available in beautifully boxed sets, ideal for corporate gifts or party favors.",
-      image: "public/01.png",
+      imageLow: "public/low/01_low.jpg",
+      imageMobile: "public/mobile/01.jpg",
+      imageTablet: "public/tablet/01.jpg",
+      image: "public/01.jpg",
     },
     {
       title: "The Original Tea-Time Favorite",
       subhead: "Simple, savory, and utterly addictive. Our classic Jeera Biscuits transport you back to traditional Indian chai time.",
-      image: "public/02.png",
+      imageLow: "public/low/02_low.jpg",
+      imageMobile: "public/mobile/02.jpg",
+      imageTablet: "public/tablet/02.jpg",
+      image: "public/02.jpg",
     },
+
     {
       title: "Blueberry Muffins: Baked Just for You",
       subhead: "Never pre-made. Order your batch 24 hours in advance to enjoy these moist, fruit-packed delights, baked fresh for your pickup or delivery.",
       image: "public/03.png",
+      imageMobile: "public/mobile/03.jpg",
+      imageTablet: "public/tablet/03.jpg",
+      image: "public/03.jpg",
     },
     {
       title: "The Ultimate Double Chocolate Chunk",
       subhead: "Deep, dark cocoa dough baked until chewy, loaded and topped with generous blocks of melting dark chocolate.",
       image: "public/04.png",
+      imageMobile: "public/mobile/04.jpg",
+      imageTablet: "public/tablet/04.jpg",
+      image: "public/04.jpg",
     },
     {
       title: "Festive Celebration Hamper",
       subhead: "Spread the joy with our limited-edition holiday box. Rich plum cake, intense chocolate treats, and festive flair—ready for gifting.",
       image: "public/05.png",
+      imageMobile: "public/mobile/05.jpg",
+      imageTablet: "public/tablet/05.jpg",
+      image: "public/05.jpg",
     },
     {
       title: "The Showstopper Dessert Pyramid",
       subhead: "Elevate your event tables with our signature almond mini-bites. Striking presentation and irresistible flavor for every guest.",
       image: "public/06.png",
+      imageMobile: "public/mobile/06.jpg",
+      imageTablet: "public/tablet/06.jpg",
+      image: "public/06.jpg",
     },
     {
       title: "The Ultimate Fresh Fruit Delight",
       subhead: "A light vanilla sponge layered with fresh cream and topped with an abundance of seasonal, hand-picked fruits and berries.",
       image: "public/07.png",
+      imageMobile: "public/mobile/07.jpg",
+      imageTablet: "public/tablet/07.jpg",
+      image: "public/07.jpg",
     },
   ];
 
@@ -62,70 +83,69 @@ document.addEventListener("DOMContentLoaded", () => {
   // CREATE INDICES
   function createIndices() {
     sliderIndices.innerHTML = "";
-
     slides.forEach((_, index) => {
+      const indicator = document.createElement("p");
       const indexNum = (index + 1).toString().padStart(2, "0");
-      const indicatorElement = document.createElement("p");
-      indicatorElement.dataset.index = index;
-      indicatorElement.innerHTML = `
+
+      indicator.innerHTML = `
         <span class="marker"></span>
         <span class="index">${indexNum}</span>
       `;
-      sliderIndices.appendChild(indicatorElement);
+      sliderIndices.appendChild(indicator);
 
-      if (index === 0) {
-        gsap.set(indicatorElement.querySelector(".index"), { opacity: 1 });
-        gsap.set(indicatorElement.querySelector(".marker"), { scaleX: 1 });
-      } else {
-        gsap.set(indicatorElement.querySelector(".index"), { opacity: 0.35 });
-        gsap.set(indicatorElement.querySelector(".marker"), { scaleX: 0 });
-      }
+      gsap.set(indicator.querySelector(".index"), { opacity: index === 0 ? 1 : 0.35 });
+      gsap.set(indicator.querySelector(".marker"), { scaleX: index === 0 ? 1 : 0 });
     });
   }
 
-  // SLIDE CHANGE ANIMATION
+  // 🔥 ***LOAD CORRECT IMAGE BASED ON DEVICE***
+  function getImageForDevice(slide) {
+    if (device === "mobile") return slide.imageMobile;
+    if (device === "tablet") return slide.imageTablet;
+    return slide.image;
+  }
+
+  // 🔥 ***SLIDE CHANGE WITH LQIP (LOW RES FIRST)***
   function animateNewSlide(index) {
-    const file = slides[index].image;
-    let media;
+    const slide = slides[index];
 
-    // 🎥 CHECK IF MEDIA IS VIDEO
-    if (file.endsWith(".mp4")) {
-      media = document.createElement("video");
-      media.src = file;
-      media.autoplay = true;
-      media.loop = true;
-      media.muted = true;
-      media.playsinline = true;
-    } else {
-      media = document.createElement("img");
-      media.src = file;
-      media.alt = `Slide ${index + 1}`;
-    }
+    const lowSrc = slide.imageLow;
+    const finalSrc = getImageForDevice(slide);
 
-    // Initial animation state
-    gsap.set(media, { opacity: 0, scale: 1.1 });
+    // Create elements
+    const lowImg = document.createElement("img");
+    lowImg.src = lowSrc;
+    lowImg.className = "low-res";
+    lowImg.style.filter = "blur(20px)";
+    lowImg.style.opacity = "0.6";
 
-    sliderImages.appendChild(media);
+    const finalImg = document.createElement("img");
+    finalImg.src = finalSrc;
+    finalImg.className = "full-res";
+    finalImg.style.opacity = "0";
 
-    // Fade + scale animation
-    gsap.to(media, {
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out",
-    });
+    // Insert both images
+    sliderImages.appendChild(lowImg);
+    sliderImages.appendChild(finalImg);
 
-    gsap.to(media, {
-      scale: 1,
-      duration: 1,
-      ease: "power2.out",
-    });
+    // Fade in low resolution immediately
+    gsap.to(lowImg, { opacity: 1, duration: 0.4 });
 
-    // Remove old media elements
+    // When HD image loads → fade it in + remove low-res
+    finalImg.onload = () => {
+      gsap.to(finalImg, { opacity: 1, duration: 0.7, ease: "power2.out" });
+      gsap.to(lowImg, {
+        opacity: 0,
+        duration: 0.6,
+        onComplete: () => lowImg.remove(),
+      });
+    };
+
+    // Remove old images
     const allMedia = sliderImages.querySelectorAll("img, video");
-    if (allMedia.length > 3) {
-      const removeCount = allMedia.length - 3;
-      for (let i = 0; i < removeCount; i++) {
-        sliderImages.removeChild(allMedia[i]);
+    if (allMedia.length > 4) {
+      for (let i = 0; i < allMedia.length - 4; i++) {
+        allMedia[i].remove();
       }
     }
 
@@ -136,55 +156,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // INDICATOR ANIMATION
   function animateIndicators(index) {
     const indicators = sliderIndices.querySelectorAll("p");
-
-    indicators.forEach((indicator, i) => {
-      const marker = indicator.querySelector(".marker");
-      const idx = indicator.querySelector(".index");
-
-      if (i === index) {
-        gsap.to(idx, { opacity: 1, duration: 0.3, ease: "power2.out" });
-        gsap.to(marker, { scaleX: 1, duration: 0.3, ease: "power2.out" });
-      } else {
-        gsap.to(idx, { opacity: 0.5, duration: 0.3, ease: "power2.out" });
-        gsap.to(marker, { scaleX: 0, duration: 0.3, ease: "power2.out" });
-      }
+    indicators.forEach((el, i) => {
+      const marker = el.querySelector(".marker");
+      const idx = el.querySelector(".index");
+      gsap.to(idx, { opacity: i === index ? 1 : 0.5, duration: 0.3 });
+      gsap.to(marker, { scaleX: i === index ? 1 : 0, duration: 0.3 });
     });
   }
 
   // TITLE ANIMATION
   function animateNewTitle(index) {
     if (currentSplit) currentSplit.revert();
-
-    // Insert title + subhead into DOM
     sliderTitle.innerHTML = `
-    <h1>${slides[index].title}</h1>
-    <h2>${slides[index].subhead || ""}</h2>
-  `;
+      <h1>${slides[index].title}</h1>
+      <h2>${slides[index].subhead}</h2>
+    `;
 
     const titleEl = sliderTitle.querySelector("h1");
     const subheadEl = sliderTitle.querySelector("h2");
 
-    // Split title into lines
-    currentSplit = new SplitText(titleEl, {
-      type: "lines",
-      linesClass: "line",
-      mask: "lines",
-    });
+    currentSplit = new SplitText(titleEl, { type: "lines", linesClass: "line" });
 
-    // Initial state
     gsap.set(currentSplit.lines, { yPercent: 100, opacity: 0 });
     gsap.set(subheadEl, { y: 30, opacity: 0 });
 
-    // Animate title lines
     gsap.to(currentSplit.lines, {
       yPercent: 0,
       opacity: 1,
-      duration: 0.75,
+      duration: 0.8,
       stagger: 0.1,
       ease: "power3.out",
     });
 
-    // Animate subhead after title
     gsap.to(subheadEl, {
       y: 0,
       opacity: 1,
@@ -203,13 +206,11 @@ document.addEventListener("DOMContentLoaded", () => {
     end: `+=${pinDistance}px`,
     scrub: 1,
     pin: true,
-    pinSpacing: true,
     onUpdate: (self) => {
       gsap.set(progressBar, { scaleY: self.progress });
 
       const currentSlide = Math.floor(self.progress * slides.length);
-
-      if (activeSlide !== currentSlide && currentSlide < slides.length) {
+      if (currentSlide !== activeSlide && currentSlide < slides.length) {
         activeSlide = currentSlide;
         animateNewSlide(activeSlide);
       }
