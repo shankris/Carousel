@@ -71,7 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  const pinDistance = window.innerHeight * slides.length;
+  const sliderSection = document.querySelector(".slider");
+  const pinDistance = sliderSection.offsetHeight * slides.length;
+
   const progressBar = document.querySelector(".slider-progress");
   const sliderImages = document.querySelector(".slider-images");
   const sliderTitle = document.querySelector(".slider-title");
