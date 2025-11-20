@@ -51,7 +51,8 @@ p {
 
 img {
   width: 100%;
-  height: 100dvh;
+  height: auto;
+  display: block;
   object-fit: cover;
 }
 
@@ -204,6 +205,7 @@ section {
   align-items: center;
   gap: 1rem;
   color: #fff;
+  overflow: hidden;
 }
 
 .index {
@@ -217,17 +219,20 @@ section {
   width: 0.75rem;
   height: 1px;
   background-color: #fff;
-  transform-origin: right;
+  transform-origin: left;
+  /* change from right → left */
   transform: scaleX(0);
 }
+
 
 .slider-progress-bar {
   position: absolute;
   top: 0;
   right: 0;
-  width: 1px;
+  width: 0%;
   height: 100dvh;
   background-color: rgba(255, 255, 255, 0.35);
+  overflow: hidden;
 }
 
 .slider-progress {

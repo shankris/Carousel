@@ -1,77 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
+document.addEventListener("DOMContentLoaded", async () => {
+  // Load GSAP plugins from window.gsap
+  gsap.registerPlugin(gsap.ScrollTrigger, gsap.SplitText);
 
+  // Load JSON content
+  const slides = await fetch("public/slides.json").then((res) => res.json());
+
+  // LENIS
   const lenis = new Lenis();
   lenis.on("scroll", ScrollTrigger.update);
-  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
   gsap.ticker.lagSmoothing(0);
 
-  // DETECT DEVICE
-  const screenWidth = window.innerWidth;
-  const device = screenWidth < 600 ? "mobile" : screenWidth < 1024 ? "tablet" : "desktop";
-
-  // SLIDES DATA (update paths accordingly)
-  const slides = [
-    {
-      title: "Our Best Seller",
-      subhead: "Elegant, small-batch perfection. Available in beautifully boxed sets, ideal for corporate gifts or party favors.",
-      imageLow: "public/low/01_low.jpg",
-      imageMobile: "public/mobile/01_phone.jpg",
-      imageTablet: "public/tablet/01.jpg",
-      image: "public/01.jpg",
-    },
-    {
-      title: "The Original Tea-Time Favorite",
-      subhead: "Simple, savory, and utterly addictive. Our classic Jeera Biscuits transport you back to traditional Indian chai time.",
-      imageLow: "public/low/02_low.jpg",
-      imageMobile: "public/mobile/02_phone.jpg",
-      imageTablet: "public/tablet/02.jpg",
-      image: "public/02.jpg",
-    },
-
-    {
-      title: "Blueberry Muffins: Baked Just for You",
-      subhead: "Never pre-made. Order your batch 24 hours in advance to enjoy these moist, fruit-packed delights, baked fresh for your pickup or delivery.",
-      image: "public/03.png",
-      imageMobile: "public/mobile/03_phone.jpg",
-      imageTablet: "public/tablet/03.jpg",
-      image: "public/03.jpg",
-    },
-    {
-      title: "The Ultimate Double Chocolate Chunk",
-      subhead: "Deep, dark cocoa dough baked until chewy, loaded and topped with generous blocks of melting dark chocolate.",
-      image: "public/04.png",
-      imageMobile: "public/mobile/04_phone.jpg",
-      imageTablet: "public/tablet/04.jpg",
-      image: "public/04.jpg",
-    },
-    {
-      title: "Festive Celebration Hamper",
-      subhead: "Spread the joy with our limited-edition holiday box. Rich plum cake, intense chocolate treats, and festive flair—ready for gifting.",
-      image: "public/05.png",
-      imageMobile: "public/mobile/05_phone.jpg",
-      imageTablet: "public/tablet/05.jpg",
-      image: "public/05.jpg",
-    },
-    {
-      title: "The Showstopper Dessert Pyramid",
-      subhead: "Elevate your event tables with our signature almond mini-bites. Striking presentation and irresistible flavor for every guest.",
-      image: "public/06.png",
-      imageMobile: "public/mobile/06_phone.jpg",
-      imageTablet: "public/tablet/06.jpg",
-      image: "public/06.jpg",
-    },
-    {
-      title: "The Ultimate Fresh Fruit Delight",
-      subhead: "A light vanilla sponge layered with fresh cream and topped with an abundance of seasonal, hand-picked fruits and berries.",
-      image: "public/07.png",
-      imageMobile: "public/mobile/07_phone.jpg",
-      imageTablet: "public/tablet/07.jpg",
-      image: "public/07.jpg",
-    },
-  ];
-
-  const pinDistance = window.innerHeight * slides.length;
+  // DOM elements
   const progressBar = document.querySelector(".slider-progress");
   const sliderImages = document.querySelector(".slider-images");
   const sliderTitle = document.querySelector(".slider-title");
@@ -80,132 +22,104 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeSlide = 0;
   let currentSplit = null;
 
-  // CREATE INDICES
+  // ----- Create Indices -----
   function createIndices() {
     sliderIndices.innerHTML = "";
-    slides.forEach((_, index) => {
-      const indicator = document.createElement("p");
-      const indexNum = (index + 1).toString().padStart(2, "0");
 
-      indicator.innerHTML = `
+    slides.forEach((_, index) => {
+      const indexNum = (index + 1).toString().padStart(2, "0");
+      const indicatorElement = document.createElement("p");
+      indicatorElement.dataset.index = index;
+      indicatorElement.innerHTML = `
         <span class="marker"></span>
         <span class="index">${indexNum}</span>
       `;
-      sliderIndices.appendChild(indicator);
+      sliderIndices.appendChild(indicatorElement);
 
-      gsap.set(indicator.querySelector(".index"), { opacity: index === 0 ? 1 : 0.35 });
-      gsap.set(indicator.querySelector(".marker"), { scaleX: index === 0 ? 1 : 0 });
+      gsap.set(indicatorElement.querySelector(".index"), { opacity: index === 0 ? 1 : 0.35 });
+      gsap.set(indicatorElement.querySelector(".marker"), { scaleX: index === 0 ? 1 : 0 });
     });
   }
 
-  // 🔥 ***LOAD CORRECT IMAGE BASED ON DEVICE***
-  function getImageForDevice(slide) {
-    if (device === "mobile") return slide.imageMobile;
-    if (device === "tablet") return slide.imageTablet;
-    return slide.image;
-  }
-
-  // 🔥 ***SLIDE CHANGE WITH LQIP (LOW RES FIRST)***
+  // ----- Animate Slide -----
   function animateNewSlide(index) {
-    const slide = slides[index];
+    const newSliderImage = document.createElement("img");
 
-    const lowSrc = slide.imageLow;
-    const finalSrc = getImageForDevice(slide);
+    // Pick correct image based on device size
+    if (window.innerWidth < 600 && slides[index].imageMobile) {
+      newSliderImage.src = slides[index].imageMobile;
+    } else if (window.innerWidth < 1024 && slides[index].imageTablet) {
+      newSliderImage.src = slides[index].imageTablet;
+    } else {
+      newSliderImage.src = slides[index].image;
+    }
 
-    // Create elements
-    const lowImg = document.createElement("img");
-    lowImg.src = lowSrc;
-    lowImg.className = "low-res";
-    lowImg.style.filter = "blur(20px)";
-    lowImg.style.opacity = "0.6";
+    newSliderImage.alt = `Slide ${index + 1}`;
 
-    const finalImg = document.createElement("img");
-    finalImg.src = finalSrc;
-    finalImg.className = "full-res";
-    finalImg.style.opacity = "0";
+    gsap.set(newSliderImage, { opacity: 0, scale: 1.1 });
+    sliderImages.appendChild(newSliderImage);
 
-    // Insert both images
-    sliderImages.appendChild(lowImg);
-    sliderImages.appendChild(finalImg);
+    gsap.to(newSliderImage, { opacity: 1, duration: 0.5, ease: "power2.out" });
+    gsap.to(newSliderImage, { scale: 1, duration: 1, ease: "power2.out" });
 
-    // Fade in low resolution immediately
-    gsap.to(lowImg, { opacity: 1, duration: 0.4 });
-
-    // When HD image loads → fade it in + remove low-res
-    finalImg.onload = () => {
-      gsap.to(finalImg, { opacity: 1, duration: 0.7, ease: "power2.out" });
-      gsap.to(lowImg, {
-        opacity: 0,
-        duration: 0.6,
-        onComplete: () => lowImg.remove(),
-      });
-    };
-
-    // Remove old images
-    const allMedia = sliderImages.querySelectorAll("img, video");
-    if (allMedia.length > 4) {
-      for (let i = 0; i < allMedia.length - 4; i++) {
-        allMedia[i].remove();
-      }
+    const allImages = sliderImages.querySelectorAll("img");
+    if (allImages.length > 3) {
+      const excess = allImages.length - 3;
+      for (let i = 0; i < excess; i++) sliderImages.removeChild(allImages[i]);
     }
 
     animateNewTitle(index);
     animateIndicators(index);
   }
 
-  // INDICATOR ANIMATION
+  // ----- Animate Title -----
+  function animateNewTitle(index) {
+    if (currentSplit) currentSplit.revert();
+
+    sliderTitle.innerHTML = `<h1>${slides[index].title}</h1>`;
+
+    currentSplit = new SplitText(sliderTitle.querySelector("h1"), {
+      type: "lines",
+      linesClass: "line",
+      mask: "lines",
+    });
+
+    gsap.set(currentSplit.lines, { yPercent: 100, opacity: 0 });
+    gsap.to(currentSplit.lines, {
+      yPercent: 0,
+      opacity: 1,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: "power3.out",
+    });
+  }
+
+  // ----- Animate Indicators -----
   function animateIndicators(index) {
     const indicators = sliderIndices.querySelectorAll("p");
-    indicators.forEach((el, i) => {
-      const marker = el.querySelector(".marker");
-      const idx = el.querySelector(".index");
-      gsap.to(idx, { opacity: i === index ? 1 : 0.5, duration: 0.3 });
+    indicators.forEach((indicator, i) => {
+      const marker = indicator.querySelector(".marker");
+      const number = indicator.querySelector(".index");
+
+      gsap.to(number, { opacity: i === index ? 1 : 0.5, duration: 0.3 });
       gsap.to(marker, { scaleX: i === index ? 1 : 0, duration: 0.3 });
     });
   }
 
-  // TITLE ANIMATION
-  function animateNewTitle(index) {
-    if (currentSplit) currentSplit.revert();
-    sliderTitle.innerHTML = `
-      <h1>${slides[index].title}</h1>
-      <h2>${slides[index].subhead}</h2>
-    `;
-
-    const titleEl = sliderTitle.querySelector("h1");
-    const subheadEl = sliderTitle.querySelector("h2");
-
-    currentSplit = new SplitText(titleEl, { type: "lines", linesClass: "line" });
-
-    gsap.set(currentSplit.lines, { yPercent: 100, opacity: 0 });
-    gsap.set(subheadEl, { y: 30, opacity: 0 });
-
-    gsap.to(currentSplit.lines, {
-      yPercent: 0,
-      opacity: 1,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: "power3.out",
-    });
-
-    gsap.to(subheadEl, {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      delay: 0.4,
-      ease: "power3.out",
-    });
-  }
-
+  // Init indices
   createIndices();
+  console.log(gsap, gsap.ScrollTrigger, gsap.SplitText);
 
-  // SCROLL TRIGGER
+  // ----- ScrollTrigger -----
+  const pinDistance = window.innerHeight * slides.length;
+
   ScrollTrigger.create({
     trigger: ".slider",
     start: "top top",
     end: `+=${pinDistance}px`,
     scrub: 1,
     pin: true,
+    pinSpacing: true,
     onUpdate: (self) => {
       gsap.set(progressBar, { scaleY: self.progress });
 
