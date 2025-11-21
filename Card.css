@@ -205,6 +205,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow-y: auto;
+  position: relative;
 }
 
 .description {
@@ -244,25 +246,26 @@
 }
 
 .back2List {
-  /* width: 100%; */
+  position: absolute;
+  right: 10px;
+
+  /* transform: translateX(-50%); */
+  /* centers horizontally */
+  bottom: 10px;
+  /* distance from bottom of panelTxt */
+  width: min(90%, 350px);
+  /* responsive width, max 350px */
   background-color: #646464;
   text-align: center;
   color: #c5c5c5;
   padding: 10px;
   border-radius: 4px;
-  max-width: 500px;
-  margin-top: auto;
-  /* text-transform: uppercase; */
-  font-weight: 300;
-  margin: 20px 0 20px 0;
   user-select: none;
   cursor: pointer;
-
+  font-weight: 300;
   font-size: 14px;
-  position: absolute;
-  bottom: 2px;
-  right: 20px;
-  width: 350px;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
 
@@ -281,6 +284,7 @@
 
   .panelTxt {
     width: 100%;
+    padding: 10px;
   }
 
   .cardCarousel {
@@ -288,6 +292,17 @@
     height: 400px;
   }
 
+  .back2List {
+    width: calc(100% - 32px);
+    /* full width with side padding */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+    max-width: none;
+    position: absolute;
+    bottom: 20px;
+    width: min(80%, 350px)
+  }
 
   .imageContainer {
     width: 100%;
