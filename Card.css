@@ -131,6 +131,7 @@
 
 
 
+
 .cardCarousel {
   width: 1600px;
 }
@@ -140,7 +141,7 @@
   top: 0;
   right: -1900px;
   width: 1900px;
-  max-width: 98%;
+  max-width: 100%;
   height: 100%;
   color: #fff;
   background-color: #000;
@@ -169,7 +170,7 @@
   font-size: 30px;
   font-weight: 300;
   color: #8d8d8d;
-  padding: 20px 0 30px 0;
+  padding: 20px 0 10px 0;
   width: 100%;
   background-color: transparent;
 }
@@ -208,28 +209,30 @@
 
 .description {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.6;
+  color: #8d8d8d;
 }
 
 .details-table {
   display: grid;
   grid-template-columns: 100px 1fr;
-  row-gap: 10px;
+  row-gap: 6px;
   column-gap: 10px;
   margin: 32px 0px;
   font-size: 14px;
 }
 
 .details-table .label {
-  font-weight: 300;
+  font-weight: 500;
   color: #c0c0c0;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .details-table .value {
   color: #8e8e8e;
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .ingredientsTitle {
@@ -241,7 +244,7 @@
 }
 
 .back2List {
-  width: 100%;
+  /* width: 100%; */
   background-color: #646464;
   text-align: center;
   color: #c5c5c5;
@@ -249,9 +252,47 @@
   border-radius: 4px;
   max-width: 500px;
   margin-top: auto;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 300;
   margin: 20px 0 20px 0;
   user-select: none;
   cursor: pointer;
+
+  font-size: 14px;
+  position: absolute;
+  bottom: 2px;
+  right: 20px;
+  width: 350px;
+}
+
+
+
+@media (max-width: 768px) {
+
+  #detailsPanel {
+    max-width: 100%;
+  }
+
+  #detailsContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .panelTxt {
+    width: 100%;
+  }
+
+  .cardCarousel {
+    width: 100%;
+    height: 400px;
+  }
+
+
+  .imageContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ddd;
+  }
 }
