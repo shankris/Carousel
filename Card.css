@@ -1,5 +1,5 @@
 .container {
-  width: 1200px;
+  width: 1800px;
   margin: 0 auto;
   max-width: 96%;
   /* background-color: #ddd; */
@@ -21,7 +21,7 @@
 .grid {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   gap: 12px;
 }
 
@@ -117,9 +117,9 @@
 #detailsPanel {
   position: fixed;
   top: 0;
-  right: -1600px;
-  width: 1600px;
-  max-width: 80%;
+  right: -1900px;
+  width: 1900px;
+  max-width: 98%;
   height: 100%;
   background: white;
   /* box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1); */
