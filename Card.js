@@ -72,17 +72,17 @@ document.addEventListener("click", (e) => {
 
 function openPanel(item) {
   detailsContent.innerHTML = `
-
 <div class="cardCarousel">
-<div class="imageContainer">
+  <div class="imageContainer">
     <img src="${item.image}" class="panel-img" alt="${item.name}" />
-    </div>
+  </div>
 </div>
-    <div class="panelTxt">
-    <h2 class="detailsH2">${item.name}</h2>
-    <div class="description">${item.description}</div>
 
-<div class="details-table">
+<div class="panelTxt">
+  <h2 class="detailsH2">${item.name}</h2>
+  <div class="description">${item.description}</div>
+
+  <div class="details-table">
     <div class="label">Price</div>
     <div class="value">₹${item.price}</div>
 
@@ -98,14 +98,14 @@ function openPanel(item) {
     <div class="label">Shelf life</div>
     <div class="value">${item.shelfLife || "—"}</div>
 
-${
-  item.bestSeller === true
-    ? `
+    ${
+      item.bestSeller === true
+        ? `
         <div class="label">Bestseller</div>
         <div class="value">Yes</div>
-    `
-    : ""
-}
+      `
+        : ""
+    }
 
     <div class="label">Tags</div>
     <div class="value">${item.tags?.join(", ") || "None"}</div>
@@ -114,23 +114,31 @@ ${
     <div class="value">★ ${item.rating}</div>
   </div>
 
-    <h3 class="ingredientsTitle">Ingredients</h3>
-    <ul class="ingredients-list">
-      ${item.ingredients ? item.ingredients.map((i) => `<li>${i}</li>`).join("") : "<li>Not available</li>"}
-    </ul>
+  <h3 class="ingredientsTitle">Ingredients</h3>
+  <ul class="ingredients-list">
+    ${item.ingredients ? item.ingredients.map((i) => `<li>${i}</li>`).join("") : "<li>Not available</li>"}
+  </ul>
 
-    <div id="closePanel" class="back2List">Back to List</div>
-
-    </div>
+  <div id="closePanel" class="back2List hidden">Back to List</div>
+</div>
   `;
 
   panel.classList.add("open");
   overlay.classList.add("show");
+
+  // 👇 Make button visible after render
+  setTimeout(() => {
+    const btn = document.getElementById("closePanel");
+    if (btn) btn.classList.remove("hidden");
+  }, 0);
 }
 
 function closePanel() {
   panel.classList.remove("open");
   overlay.classList.remove("show");
+
+  const btn = document.getElementById("closePanel");
+  if (btn) btn.classList.add("hidden");
 }
 
 // ---------------------------
