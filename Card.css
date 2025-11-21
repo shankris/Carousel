@@ -246,7 +246,7 @@
 }
 
 .back2List {
-  position: absolute;
+  /* position: absolute; */
   right: 10px;
 
   /* transform: translateX(-50%); */
@@ -266,6 +266,7 @@
   font-size: 14px;
   box-sizing: border-box;
   z-index: 2;
+  margin: 10px 0 20px;
 }
 
 
