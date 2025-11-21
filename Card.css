@@ -21,20 +21,37 @@
 .grid {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+  margin: 5px 0 40px 0;
 }
 
 /* CARD */
 .card {
-  background: white;
+  background: rgb(78, 78, 78);
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+}
+
+.card .more {
+  width: 100%;
+  background-color: #646464;
+  text-align: center;
+  color: #c5c5c5;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .card img {
@@ -54,13 +71,16 @@
 
 .info .title {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 300;
+  color: #fff;
   margin-bottom: 6px;
+  font-size: 22px;
 }
 
 .info .desc {
   font-size: 14px;
-  color: #555;
+  color: #d3d3d3;
+  line-height: 1.5;
 }
 
 /* Part 2: Tags */
@@ -71,7 +91,8 @@
 .tag {
   display: inline-block;
   padding: 4px 8px;
-  background: #f3f3f3;
+  color: #ddd;
+  background: #3a4757;
   border-radius: 4px;
   margin-right: 6px;
   font-size: 12px;
@@ -121,7 +142,8 @@
   width: 1900px;
   max-width: 98%;
   height: 100%;
-  background: white;
+  color: #fff;
+  background-color: #000;
   /* box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1); */
   /* padding: 20px; */
   transition: 0.5s ease;
@@ -143,7 +165,14 @@
 }
 
 
-
+.detailsH2 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #8d8d8d;
+  padding: 20px 0 30px 0;
+  width: 100%;
+  background-color: transparent;
+}
 
 #detailsPanel.open {
   right: 0;
@@ -154,31 +183,6 @@
   visibility: visible;
 }
 
-#closePanel {
-  position: absolute;
-  top: 14px;
-  right: 10px;
-  border: none;
-  background: none;
-  font-weight: 300;
-  font-size: 38px;
-  cursor: pointer;
-  float: right;
-  width: 44px;
-  background: rgba(243, 243, 243, 0.4);
-  border-radius: 50%;
-
-  /* rotate around center */
-  transform-origin: center;
-
-  transition: background .8s ease-in, transform 0.8s ease-in-out;
-}
-
-#closePanel:hover {
-  background: rgba(243, 243, 243, 0.8);
-  transform: rotate(270deg);
-}
-
 #detailsPanel .ingredients-list {
   padding-left: 20px;
   margin-top: 8px;
@@ -187,9 +191,9 @@
 #detailsPanel .ingredients-list li {
   margin-bottom: 4px;
   font-size: 14px;
+  font-weight: 400;
+  color: #bbbbbb;
 }
-
-
 
 .panelTxt {
   padding: 0 20px 20px 20px;
@@ -198,20 +202,45 @@
   flex-grow: 0;
 }
 
+.description {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .details-table {
   display: grid;
   grid-template-columns: 100px 1fr;
   row-gap: 10px;
   column-gap: 10px;
-  margin: 16px 0;
+  margin: 32px 0px;
   font-size: 14px;
 }
 
 .details-table .label {
-  font-weight: 600;
-  color: #444;
+  font-weight: 300;
+  color: #c0c0c0;
+  font-size: 16px;
 }
 
 .details-table .value {
-  color: #222;
+  color: #8e8e8e;
+  font-size: 16px;
+}
+
+.ingredientsTitle {
+  font-size: 24px;
+  font-weight: 300;
+  color: #bbbbbb;
+  border-bottom: 1px solid #555555;
+  padding: 0 0 4px 0;
+}
+
+#closePanel, .back2List {
+  width: 100%;
+  background-color: #646464;
+  text-align: center;
+  color: #c5c5c5;
+  padding: 10px;
+  border-radius: 4px;
 }

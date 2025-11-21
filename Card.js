@@ -30,8 +30,7 @@ function renderCards(list) {
       </div>
 
       <div class="section footer">
-        <strong>₹${item.price}</strong>
-        <a class="more" data-id="${item.id}">More →</a>
+        <a class="more" data-id="${item.id}">Find out more ...</a>
       </div>
     `;
 
@@ -80,8 +79,8 @@ function openPanel(item) {
     </div>
 </div>
     <div class="panelTxt">
-    <h2>${item.name}</h2>
-    <p>${item.description}</p>
+    <h2 class="detailsH2">${item.name}</h2>
+    <div class="description">${item.description}</div>
 
 <div class="details-table">
     <div class="label">Price</div>
@@ -116,10 +115,13 @@ ${
     <div class="value">★ ${item.rating}</div>
   </div>
 
-    <h3>Ingredients</h3>
+    <h3 class="ingredientsTitle">Ingredients</h3>
     <ul class="ingredients-list">
       ${item.ingredients ? item.ingredients.map((i) => `<li>${i}</li>`).join("") : "<li>Not available</li>"}
     </ul>
+
+    <div id="closePanel" class="back2List">Back to List</div>
+
     </div>
   `;
 
