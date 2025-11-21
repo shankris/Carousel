@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cake Cards</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="Card.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Cakes & Cookies</h1>
+
+    <!-- SIMPLE FILTERS -->
+    <div id="filters">
+      <a href="#" data-filter="all">All</a> |
+      <a href="#" data-filter="eggless">Eggless</a> |
+      <a href="#" data-filter="vegan">Vegan</a> |
+      <a href="#" data-filter="gluten-free">Gluten-Free</a> |
+      <a href="#" data-filter="sugar-free">Sugar-Free</a>
+    </div>
+
+    <!-- CARD GRID -->
+    <div class="grid" id="cakeGrid"></div>
+  </div>
+  <!-- DETAILS PANEL -->
+  <div id="overlay"></div>
+
+  <div id="detailsPanel">
+    <button id="closePanel">×</button>
+    <div id="detailsContent"></div>
+  </div>
+
+  <script src="Card.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+let allCakes = [];
+
+// Load JSON
+fetch("cakes.json")
+  .then((res) => res.json())
+  .then((data) => {
+    allCakes = data;
+    renderCards(allCakes);
+  });
+
+// Render Cards
+function renderCards(list) {
+  const container = document.getElementById("cakeGrid");
+  container.innerHTML = "";
+
+  list.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      
+      <div class="section info">
+        <div class="title">${item.name}</div>
+        <div class="desc">${item.description}</div>
+        
+        <div class="tags">
+          ${item.tags.map((t) => `<span class="tag">${t}</span>`).join("")}
+        </div>
+      </div>
+
+      <div class="section footer">
+        <strong>₹${item.price}</strong>
+        <a class="more" data-id="${item.id}">More →</a>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+/* ---------------------
+   FILTER CLICK
+---------------------- */
+document.addEventListener("click", (e) => {
+  if (!e.target.dataset.filter) return;
+  e.preventDefault();
+
+  const filter = e.target.dataset.filter;
+
+  if (filter === "all") {
+    renderCards(allCakes);
+  } else {
+    const filtered = allCakes.filter((item) => item.tags.includes(filter));
+    renderCards(filtered);
+  }
+});
+
+/* ---------------------
+   DETAILS PANEL LOGIC
+---------------------- */
+const panel = document.getElementById("detailsPanel");
+const overlay = document.getElementById("overlay");
+const detailsContent = document.getElementById("detailsContent");
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("more")) {
+    const id = e.target.dataset.id;
+    const item = allCakes.find((c) => c.id == id);
+    openPanel(item);
+  }
+});
+
+function openPanel(item) {
+  detailsContent.innerHTML = `
+
+<div class="cardCarousel">
+<div class="imageContainer">
+    <img src="${item.image}" class="panel-img" alt="${item.name}" />
+    </div>
+</div>
+    <div class="panelTxt">
+    <h2>${item.name}</h2>
+    <p>${item.description}</p>
+
+<div class="details-table">
+    <div class="label">Price</div>
+    <div class="value">₹${item.price}</div>
+
+    <div class="label">Category</div>
+    <div class="value">${item.category || "—"}</div>
+
+    <div class="label">Weight</div>
+    <div class="value">${item.weight || "—"}</div>
+
+    <div class="label">Delivery time</div>
+    <div class="value">${item.deliveryTime || "—"}</div>
+
+    <div class="label">Shelf life</div>
+    <div class="value">${item.shelfLife || "—"}</div>
+
+${
+  item.bestSeller === true
+    ? `
+        <div class="label">Bestseller</div>
+        <div class="value">Yes</div>
+    `
+    : ""
+}
+
+
+    <div class="label">Tags</div>
+    <div class="value">${item.tags?.join(", ") || "None"}</div>
+
+    <div class="label">Rating</div>
+    <div class="value">★ ${item.rating}</div>
+  </div>
+
+    <h3>Ingredients</h3>
+    <ul class="ingredients-list">
+      ${item.ingredients ? item.ingredients.map((i) => `<li>${i}</li>`).join("") : "<li>Not available</li>"}
+    </ul>
+    </div>
+  `;
+
+  panel.classList.add("open");
+  overlay.classList.add("show");
+}
+
+function closePanel() {
+  panel.classList.remove("open");
+  overlay.classList.remove("show");
+}
+
+// Close via X button
+document.getElementById("closePanel").onclick = closePanel;
+
+// Close by clicking overlay
+overlay.onclick = closePanel;
+
+// Close on ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closePanel();
+});
