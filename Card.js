@@ -107,7 +107,6 @@ ${
     : ""
 }
 
-
     <div class="label">Tags</div>
     <div class="value">${item.tags?.join(", ") || "None"}</div>
 
@@ -134,8 +133,14 @@ function closePanel() {
   overlay.classList.remove("show");
 }
 
-// Close via X button
-document.getElementById("closePanel").onclick = closePanel;
+// ---------------------------
+// CLOSING EVENTS
+// ---------------------------
+
+// Close Back to List (dynamic element)
+document.addEventListener("click", (e) => {
+  if (e.target.id === "closePanel") closePanel();
+});
 
 // Close by clicking overlay
 overlay.onclick = closePanel;
