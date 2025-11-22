@@ -83,14 +83,14 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 4px;
   z-index: 10;
 }
 
 nav .container {
   margin: 0 auto;
   width: 1600px;
-  max-width: 90%;
+  max-width: 98%;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
@@ -103,6 +103,15 @@ nav p {
   color: #fff;
 
 }
+
+.site-info {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
 
 nav a {
   backdrop-filter: blur(20px);
