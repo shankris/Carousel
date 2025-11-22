@@ -21,8 +21,9 @@
       <div class="site-info">
         <p>
           <a href="index.html">Home</a>
-          <a href="about.htm">About</a>
           <a href="card.htm">Products</a>
+          <a href="about.htm">About</a>
+          <a href="contact.htm">Contact</a>
         </p>
       </div>
     </div>
@@ -33,9 +34,53 @@
 
     <div class="container">
 
+      <div class="quote" id="quote">
+        Choose a <strong>job</strong> you love, and you will never work a day in your life.
+      </div>
 
     </div>
+
   </div>
+
+  <section>
+    <div class="container">
+
+      <div class="twoCol">
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script>
+    const quoteEl = document.getElementById("quote");
+    const text = quoteEl.innerHTML.trim();
+
+    // Split into words manually (no SplitText plugin needed)
+    const words = text.split(" ").map(word => {
+      return `<span class="word">${word}</span>`;
+    });
+
+    quoteEl.innerHTML = words.join(" ");
+
+    gsap.to(".word", {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: "power3.out",
+      stagger: 0.15
+    });
+
+    gsap.to(".quote", {
+      opacity: 1,
+      duration: 0.1
+    });
+  </script>
+
 
 </body>
 

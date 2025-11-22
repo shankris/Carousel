@@ -6,3 +6,50 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.quote-container {
+  position: relative;
+  /* needed for absolute children */
+  height: 300px;
+  /* adjust as needed depending on your layout */
+}
+
+.quote {
+  position: absolute;
+  bottom: 20px;
+  /* distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 16px;
+  line-height: 1.1;
+  max-width: 70ch;
+  text-align: center;
+
+  opacity: 0;
+  background: #ffffff66;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+.left {
+  background: rgb(54, 54, 54);
+}
+
+.right {
+
+  background: url(public/about2.jpg);
+  background-size: cover;
+  /* makes the image cover the whole div */
+  background-position: center;
+  /* centers the image */
+  background-repeat: no-repeat;
+  /* prevents tiling */
+}

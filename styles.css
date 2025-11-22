@@ -89,7 +89,7 @@ nav {
 
 nav .container {
   margin: 0 auto;
-  width: 1850px;
+  width: 1800px;
   max-width: 98%;
   background-color: transparent;
   display: flex;
@@ -306,6 +306,26 @@ section {
   display: block;
 }
 
+
+.twoCol {
+  display: flex;
+  max-width: 90%;
+  width: 1400px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.left,
+.right {
+  flex: 1;
+  /* Makes both columns equal width */
+  height: 100%;
+  /* optional depending on layout */
+  padding: 30px;
+}
+
+
+
 /* ------------------------------
     RESPONSIVE
 --------------------------------*/
@@ -331,8 +351,6 @@ section {
     Width: 96%;
     top: 82%;
   }
-
-
 
   h1 {
     font-size: 24px;
