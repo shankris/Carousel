@@ -40,7 +40,7 @@
 
 
 .left {
-  background: rgb(54, 54, 54);
+  /* background: rgb(54, 54, 54); */
 }
 
 .right {
@@ -52,4 +52,21 @@
   /* centers the image */
   background-repeat: no-repeat;
   /* prevents tiling */
+}
+
+h1.aboutH1 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 10px 0 0;
+  background-color: none;
+  padding: 0;
+}
+
+p.aboutTxt {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  padding: 20px 0;
+  font-weight: 300;
+
 }
