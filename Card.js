@@ -39,23 +39,6 @@ function renderCards(list) {
 }
 
 /* ---------------------
-   FILTER CLICK
----------------------- */
-document.addEventListener("click", (e) => {
-  if (!e.target.dataset.filter) return;
-  e.preventDefault();
-
-  const filter = e.target.dataset.filter;
-
-  if (filter === "all") {
-    renderCards(allCakes);
-  } else {
-    const filtered = allCakes.filter((item) => item.tags.includes(filter));
-    renderCards(filtered);
-  }
-});
-
-/* ---------------------
    DETAILS PANEL LOGIC
 ---------------------- */
 const panel = document.getElementById("detailsPanel");

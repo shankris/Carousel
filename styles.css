@@ -89,7 +89,7 @@ nav {
 
 nav .container {
   margin: 0 auto;
-  width: 1600px;
+  width: 1800px;
   max-width: 98%;
   background-color: transparent;
   display: flex;
@@ -115,25 +115,27 @@ nav p {
 
 nav a {
   backdrop-filter: blur(20px);
-  padding: 4px 6px;
+  padding: 4px 12px;
   margin: 0 4px;
   text-decoration: none;
-  color: #203060;
+  color: #171718;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
+  font-size: 14px;
 }
 
 nav .logo {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.25rem;
+  border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(20px);
-  padding: 0.5rem 1rem;
+  padding: 4px 16px;
+  margin: 6px 0 0 0;
 
 }
 
 nav .logo p {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
 }
 
@@ -308,6 +310,22 @@ section {
     RESPONSIVE
 --------------------------------*/
 @media (max-width: 768px) {
+
+
+  nav .logo {
+    padding: 4px 6px;
+    margin: 4px 0 0 0;
+  }
+
+  nav .logo p {
+    font-size: 20px;
+  }
+
+  nav a {
+    padding: 4px 4px;
+    border-radius: 2px;
+    line-height: 2.2;
+  }
 
   .intro-text {
     Width: 96%;
