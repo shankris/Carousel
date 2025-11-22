@@ -45,19 +45,15 @@
 
 .right {
 
-  background: url(public/about2.jpg);
-  background-size: cover;
-  /* makes the image cover the whole div */
-  background-position: center;
-  /* centers the image */
-  background-repeat: no-repeat;
-  /* prevents tiling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1.aboutH1 {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 300;
-  margin: 10px 0 0;
+  margin: 60px 0 0;
   background-color: none;
   padding: 0;
 }
@@ -66,7 +62,18 @@ p.aboutTxt {
   font-size: 16px;
   line-height: 1.7;
   color: #fff;
-  padding: 20px 0;
+  padding: 10px 20px 10px 0;
   font-weight: 300;
+}
 
+.aboutImg2 {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+}
+
+.aboutImg3 {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
 }
