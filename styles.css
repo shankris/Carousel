@@ -160,7 +160,7 @@ nav .logo p span {
 section {
   position: relative;
   width: 100%;
-  /* height: 100dvh; */
+  height: 100dvh;
   overflow: visible;
 }
 
@@ -317,18 +317,67 @@ section {
 }
 
 
+/* ------------------------------
+    TWO COLUMN LAYOUT
+--------------------------------*/
+
 .twoCol {
   display: flex;
-  max-width: 90%;
   width: 1400px;
-  min-height: 100vh;
-  height: auto;
+  max-width: 90%;
   margin: 0 auto;
+  min-height: 100vh;
+  gap: 40px;
+  /* optional – gives spacing between columns */
 }
 
+/* Left and Right columns */
 .left,
 .right {
+  flex: 1;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* centers content vertically */
+}
+
+/* If RIGHT side uses a background image */
+.right {
+  /* background-image: url("public/about2.jpg"); */
+  background-size: contain;
+  /* ← image will shrink to fit */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  /* optional fallback */
+  min-height: 500px;
+  /* makes sure the box has height */
+}
+
+/* If you place an <img> instead of background */
+.aboutImg3 {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  /* prevents cropping */
+}
+
+/* ------------------------------
+    RESPONSIVE
+--------------------------------*/
+@media (max-width: 1024px) {
+  .twoCol {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    min-height: 400px;
+  }
 }
 
 

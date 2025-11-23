@@ -22,6 +22,7 @@ function renderCards(list) {
       
       <div class="section info">
         <div class="title">${item.name}</div>
+        <div class="desc">${item.smallDesc}</div>
         <div class="desc">${item.description}</div>
         
         <div class="tags">
