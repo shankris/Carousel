@@ -364,6 +364,128 @@ section {
   /* prevents cropping */
 }
 
+
+/* ==========================================
+   MOBILE BOTTOM NAV USING SVG ICONS
+========================================== */
+@media (max-width: 768px) {
+
+  /* Fix bottom bar to the screen */
+  .site-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    /* backdrop-filter: blur(12px); */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
+    padding: 0;
+    z-index: 9999;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  nav a {
+    margin: 0;
+    border-right: 1px solid #1b1b1b;
+    padding: 0;
+    border-radius: 0;
+    background: #495067;
+
+    /* letter-spacing: 1px; */
+  }
+
+  nav a:not(:last-child) {
+    border-right: 1px solid #1b1b1b;
+  }
+
+
+  a[data-icon="home"]::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url("./public/icons/home.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  a[data-icon="product"]::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url("./public/icons/product.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  a[data-icon="about"]::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url("./public/icons/about.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  a[data-icon="contact"]::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url("./public/icons/contact.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+
+  .site-info p {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Each tab */
+  .site-info a {
+    flex: 1;
+    text-align: center;
+    color: #bcbcbc;
+    text-decoration: none;
+    font-size: 11px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
+  }
+
+  /* Icon styling */
+  .site-info a svg {
+    width: 22px;
+    height: 22px;
+    stroke: white;
+  }
+
+  /* Active/hover styling */
+  .site-info a:hover,
+  .site-info a:focus {
+    opacity: 0.8;
+  }
+
+  /* Make bottom nav float above page */
+  body {
+    padding-bottom: 70px;
+    /* protect content from being hidden */
+  }
+}
+
+
+
+
 /* ------------------------------
     RESPONSIVE
 --------------------------------*/
@@ -421,11 +543,6 @@ section {
     font-size: 20px;
   }
 
-  nav a {
-    padding: 4px 4px;
-    border-radius: 2px;
-    line-height: 2.2;
-  }
 
   .intro-text {
     Width: 96%;
@@ -439,10 +556,6 @@ section {
 
   h2 {
     font-size: 16px;
-  }
-
-  nav {
-    /* display: none; */
   }
 
   .intro h1,
