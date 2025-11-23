@@ -103,7 +103,12 @@ function openPanel(item) {
     ${item.ingredients ? item.ingredients.map((i) => `<li>${i}</li>`).join("") : "<li>Not available</li>"}
   </ul>
 
-  <div id="closePanel" class="back2List hidden">Back to List</div>
+<div class="navBar">
+  <button class="navBtn prevBtn" data-id="${item.id}">←</button>
+  <button id="closePanel" class="navBtn backBtn hidden">Back to List</button>
+  <button class="navBtn nextBtn" data-id="${item.id}">→</button>
+</div>
+
 </div>
   `;
 
@@ -140,4 +145,30 @@ overlay.onclick = closePanel;
 // Close on ESC key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closePanel();
+});
+
+// Next / Previous navigation
+function navigateTo(direction, currentId) {
+  const index = allCakes.findIndex((c) => c.id == currentId);
+  let newIndex = index;
+
+  if (direction === "next") {
+    newIndex = (index + 1) % allCakes.length; // loop to beginning
+  } else if (direction === "prev") {
+    newIndex = (index - 1 + allCakes.length) % allCakes.length; // loop to end
+  }
+
+  openPanel(allCakes[newIndex]);
+}
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("nextBtn")) {
+    const id = e.target.dataset.id;
+    navigateTo("next", id);
+  }
+
+  if (e.target.classList.contains("prevBtn")) {
+    const id = e.target.dataset.id;
+    navigateTo("prev", id);
+  }
 });
