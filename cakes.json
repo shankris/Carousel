@@ -145,7 +145,7 @@
   },
   {
     "id": 9,
-    "name": "Jeera Biscuits (Savory)",
+    "name": "Handcrafted Cashew Biscuits",
     "price": 500,
     "image": "public/09.jpg",
     "tags": ["savory", "tea-time"],
@@ -163,7 +163,7 @@
   },
   {
     "id": 10,
-    "name": "Assorted Muffin Box (Set of 6)",
+    "name": "Premium Cashew Cookie Selection",
     "price": 500,
     "image": "public/10.jpg",
     "tags": ["breakfast", "variety"],
@@ -181,7 +181,7 @@
   },
   {
     "id": 11,
-    "name": "Lemon Drizzle Cake (Loaf)",
+    "name": "Blueberry Muffins",
     "price": 500,
     "image": "public/11.jpg",
     "tags": ["dry-cake", "tea-time"],
@@ -199,11 +199,11 @@
   },
   {
     "id": 12,
-    "name": "Birthday Cake Pop Pack (Set of 10)",
+    "name": "Golden Almond Bites",
     "price": 500,
     "image": "public/12.jpg",
     "tags": ["party-favor", "fun"],
-    "smallDesc": "A delicious array of perfectly baked almond biscuits, ideal for sharing or a refined personal treat.",
+    "smallDesc": "Indulgent, moist chocolate fudge mini loaf cakes. A rich, satisfying treat for breakfast, snack, or hot beverage.",
     "description": "Vanilla cake crumbled and mixed with frosting, dipped in chocolate coating.",
     "rating": 4.6,
     "popularity": 73,
