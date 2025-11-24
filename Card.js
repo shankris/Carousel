@@ -66,9 +66,6 @@ function openPanel(item) {
   <div class="description">${item.description}</div>
 
   <div class="details-table">
-    <div class="label">Price</div>
-    <div class="value">₹${item.price}</div>
-
     <div class="label">Category</div>
     <div class="value">${item.category || "—"}</div>
 
@@ -95,6 +92,13 @@ function openPanel(item) {
 
     <div class="label">Rating</div>
     <div class="value">★ ${item.rating}</div>
+
+    <div class="label">Price</div>
+    <div class="value">
+    ₹ <span class="price">${item.price}</span> - 500 g<br/>
+    ₹ <span class="price">${item.price2}</span> - 1 Kg
+    </div>
+
   </div>
 
   <h3 class="ingredientsTitle">Ingredients</h3>

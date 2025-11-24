@@ -241,6 +241,12 @@
   font-weight: 400;
 }
 
+.price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #dfdfdf;
+}
+
 .ingredientsTitle {
   font-size: 24px;
   font-weight: 300;
