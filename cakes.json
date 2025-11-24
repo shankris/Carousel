@@ -264,5 +264,24 @@
     "deliveryTime": "2 days",
     "bestSeller": false,
     "shelfLife": "10 days"
+  },
+  {
+    "id": 15,
+    "name": "Almond Honney",
+    "price": "720",
+    "price2": "1,400",
+    "image": "public/12.jpg",
+    "tags": [],
+    "smallDesc": "Indulgent, moist chocolate fudge mini loaf cakes. A rich, satisfying treat for breakfast, snack, or hot beverage.",
+    "description": "Vanilla cake crumbled and mixed with frosting, dipped in chocolate coating.",
+    "rating": 4.6,
+    "popularity": 73,
+    "ingredients": ["Cake crumbs", "Frosting", "Chocolate coating", "Sprinkles"],
+    "weight": "500 g, 1 Kg",
+    "category": "Tea Cakes",
+    "specialThisWeek": true,
+    "deliveryTime": "2 days",
+    "bestSeller": false,
+    "shelfLife": "10 days"
   }
 ]
