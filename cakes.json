@@ -80,7 +80,7 @@
     "name": "Marble Cake",
     "price": "700",
     "price2": "1,350",
-    "image": "public/05dd.jpg",
+    "image": "public/05_MarbleCake.jpg",
     "tags": [],
     "smallDesc": "Indulgent assorted gift box: golden fruit cake, fudgy chocolate muffins, and premium chocolates. Perfect for any special occasion.",
     "description": "A luxurious selection for the holidays or any special occasion. This beautifully curated gift box features a rich fruit and nut loaf cake, decadent chocolate fudge muffins, and artisanal handmade chocolates, all tied with a festive ribbon.",
@@ -191,7 +191,7 @@
   },
   {
     "id": 11,
-    "name": "Marble Cake",
+    "name": "Marble Cake - Eggless",
     "price": "680",
     "price2": "1,320",
     "image": "public/11_MarbleCake.jpg",
