@@ -5,7 +5,7 @@
     "imageLow": "public/low/01_low.jpg",
     "imageMobile": "public/mobile/01_phone.jpg",
     "imageTablet": "public/tablet/01.jpg",
-    "image": "public/01.jpg"
+    "image": "public/img/01.jpg"
   },
   {
     "title": "The Perfect Party Starter",
@@ -13,7 +13,7 @@
     "imageLow": "public/low/02_low.jpg",
     "imageMobile": "public/mobile/02_phone.jpg",
     "imageTablet": "public/tablet/02.jpg",
-    "image": "public/02.jpg"
+    "image": "public/img/02.jpg"
   },
 
   {
@@ -22,7 +22,7 @@
     "imageLow": "public/03.png",
     "imageMobile": "public/mobile/03_phone.jpg",
     "imageTablet": "public/tablet/03.jpg",
-    "image": "public/03.jpg"
+    "image": "public/img/03.jpg"
   },
   {
     "title": "The Ultimate Double Chocolate Chunk",
@@ -30,7 +30,7 @@
     "imageLow": "public/04.png",
     "imageMobile": "public/mobile/04_phone.jpg",
     "imageTablet": "public/tablet/04.jpg",
-    "image": "public/04.jpg"
+    "image": "public/img/04.jpg"
   },
   {
     "title": "Festive Celebration Hamper",
@@ -38,7 +38,7 @@
     "imageLow": "public/05.png",
     "imageMobile": "public/mobile/05_phone.jpg",
     "imageTablet": "public/tablet/05.jpg",
-    "image": "public/05.jpg"
+    "image": "public/img/05.jpg"
   },
   {
     "title": "The Showstopper Dessert Pyramid",
@@ -46,7 +46,7 @@
     "imageLow": "public/06.png",
     "imageMobile": "public/mobile/06_phone.jpg",
     "imageTablet": "public/tablet/06.jpg",
-    "image": "public/06.jpg"
+    "image": "public/img/06.jpg"
   },
   {
     "title": "The Ultimate Fresh Fruit Delight",
@@ -54,6 +54,6 @@
     "imageLow": "public/07.png",
     "imageMobile": "public/mobile/07_phone.jpg",
     "imageTablet": "public/tablet/07.jpg",
-    "image": "public/07.jpg"
+    "image": "public/img/07.jpg"
   }
 ]
