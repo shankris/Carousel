@@ -91,7 +91,7 @@
   },
   {
     "id": 6,
-    "name": "Marble Cake - Eggless",
+    "name": "Eggless Marble Cake",
     "price": "680",
     "price2": "1,320",
     "image": "public/11_MarbleCake.jpg",
@@ -221,7 +221,7 @@
     "price": "700",
     "price2": "1,300",
     "image": "public/13_ChocolateBrownieEggless.jpg",
-    "tags": [],
+    "tags": ["Eggless"],
     "smallDesc": "Decadent eggless brownie! Rich, fudgy, and packed with chocolatey goodness—pure indulgence for everyone to enjoy.",
     "description": "Satisfy your deepest chocolate cravings with our unbelievably fudgy eggless brownie. This moist, rich treat is generously loaded with chunks of premium chocolate, delivering an intense flavor experience in every bite. It's the perfect inclusive dessert, offering pure, unadulterated brownie bliss for any occasion, proving deliciousness knows no bounds.",
     "rating": 4.6,
