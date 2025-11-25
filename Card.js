@@ -101,11 +101,6 @@ function openPanel(item) {
 
   </div>
 
-  <h3 class="ingredientsTitle">Ingredients</h3>
-  <ul class="ingredients-list">
-    ${item.ingredients ? item.ingredients.map((i) => `<li>${i}</li>`).join("") : "<li>Not available</li>"}
-  </ul>
-
 <div class="navBar">
   <button class="navBtn prevBtn" data-id="${item.id}">←</button>
   <button id="closePanel" class="navBtn backBtn hidden">Back to List</button>
