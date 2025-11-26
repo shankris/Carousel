@@ -186,23 +186,89 @@ document.addEventListener("click", (e) => {
   }
 });
 
-function initThumbnails(images) {
-  const track = document.querySelector(".thumbTrack");
-  const mainImg = document.getElementById("mainLargeImage");
+async function initThumbnails(images) {
+  const content = document.getElementById("detailsContent");
+  if (!content) return;
 
-  track.innerHTML = ""; // reset
+  // Defensive: remove any leftover overlays from previous renders
+  Array.from(content.querySelectorAll(".thumbOverlay")).forEach((n) => n.remove());
 
-  images.forEach((src, index) => {
+  // Basic guard & normalization
+  if (!images) images = [];
+  if (typeof images === "string") images = [images];
+
+  // Trim + remove falsy entries
+  const clean = images.map((s) => (typeof s === "string" ? s.trim() : "")).filter(Boolean);
+
+  console.log("initThumbnails — raw images:", images);
+  console.log("initThumbnails — cleaned images:", clean);
+
+  // If zero or one candidate image, nothing to show -> exit now
+  if (clean.length <= 1) return;
+
+  // We'll collect only urls that actually exist (avoid creating <img> for missing files)
+  const valid = [];
+
+  // test each url with HEAD (fallback to GET). This avoids creating <img> elements for 404s
+  await Promise.all(
+    clean.map(async (url) => {
+      try {
+        // try HEAD first (lightweight)
+        let res = await fetch(url, { method: "HEAD" });
+        // Some servers reject HEAD — fallback to GET (still ok)
+        if (!res.ok) res = await fetch(url, { method: "GET" });
+
+        if (res.ok) {
+          valid.push(url);
+        } else {
+          console.warn("initThumbnails — file not found (skipped):", url, "status:", res.status);
+        }
+      } catch (err) {
+        // network/CORS/other error - skip silently but log
+        console.warn("initThumbnails — fetch error for", url, err);
+      }
+    })
+  );
+
+  console.log("initThumbnails — valid images:", valid);
+
+  // If <= 1 valid images after testing -> nothing to show
+  if (valid.length <= 1) return;
+
+  // Build overlay & track inside the current details content
+  const imageContainer = content.querySelector(".imageContainer");
+  if (!imageContainer) return;
+
+  const overlay = document.createElement("div");
+  overlay.className = "thumbOverlay";
+
+  const track = document.createElement("div");
+  track.className = "thumbTrack";
+
+  overlay.appendChild(track);
+  imageContainer.appendChild(overlay);
+
+  const mainImg = content.querySelector("#mainLargeImage");
+
+  valid.forEach((src, index) => {
     const t = document.createElement("img");
-    t.src = src;
     t.className = "thumbImg";
+    t.alt = `thumb-${index + 1}`;
+    t.src = src;
 
     if (index === 0) t.classList.add("activeThumb");
 
-    t.onclick = () => {
-      mainImg.src = src;
-      document.querySelectorAll(".thumbImg").forEach((i) => i.classList.remove("activeThumb"));
+    t.addEventListener("click", () => {
+      // replace with your animated update if you want slide-in
+      if (mainImg) mainImg.src = src;
+      track.querySelectorAll(".thumbImg").forEach((n) => n.classList.remove("activeThumb"));
       t.classList.add("activeThumb");
+    });
+
+    // safety: if an image somehow 404s after we checked, remove it
+    t.onerror = () => {
+      t.remove();
+      if (track.querySelectorAll(".thumbImg").length === 0) overlay.remove();
     };
 
     track.appendChild(t);

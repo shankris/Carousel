@@ -156,6 +156,7 @@
   height: 100vh;
   overflow: hidden;
   background-color: #ddd;
+  position: relative;
 }
 
 .panel-img {
@@ -309,12 +310,17 @@
 /* Container that floats inside the image */
 .thumbOverlay {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  /* Perfect centering */
   width: 100%;
-  padding: 10px 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
+
   display: flex;
   justify-content: center;
+  width: 100%;
+  padding: 0 0 0 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), transparent);
   z-index: 10;
 }
 
