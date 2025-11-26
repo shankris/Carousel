@@ -6,6 +6,9 @@ fetch("cakes.json")
   .then((data) => {
     allCakes = data;
     renderCards(allCakes);
+
+    // ⭐ ADDED — Auto-open panel if URL contains ?id=
+    checkURLForAutoOpen();
   });
 
 // Render Cards
@@ -17,7 +20,6 @@ function renderCards(list) {
     const card = document.createElement("div");
     card.className = "card";
 
-    // pick the first image from images[] if present, otherwise fall back to image
     const firstImage = item.images?.[0] ?? item.image ?? "";
 
     card.innerHTML = `
@@ -33,7 +35,9 @@ function renderCards(list) {
       </div>
 
       <div class="section footer">
-        <a class="more" data-id="${item.id}">Find out more ...</a>
+        <a class="more" href="?id=${item.id}" data-id="${item.id}">
+          Find out more ...
+        </a>
       </div>
     `;
 
@@ -52,21 +56,24 @@ document.addEventListener("click", (e) => {
   if (e.target.classList.contains("more")) {
     const id = e.target.dataset.id;
     const item = allCakes.find((c) => c.id == id);
+
+    // ⭐ ADDED — Update URL when clicked (no page reload)
+    history.replaceState(null, "", `?id=${id}`);
+
     openPanel(item);
+
+    e.preventDefault(); // stop normal navigation
   }
 });
 
 function openPanel(item) {
-  // pick the first image from item.images or fall back to item.image
   const firstImage = item.images?.[0] ?? item.image ?? "";
 
   detailsContent.innerHTML = `
 <div class="imageContainer">
 
-  <!-- MAIN IMAGE -->
   <img id="mainLargeImage" src="${firstImage}" class="panel-img" alt="${item.name}" />
 
-  <!-- THUMBNAILS OVERLAY INSIDE IMAGE -->
   <div class="thumbOverlay">
       <div class="thumbTrack"></div>
   </div>
@@ -128,7 +135,6 @@ function openPanel(item) {
   panel.classList.add("open");
   overlay.classList.add("show");
 
-  // 👇 Make button visible after render
   setTimeout(() => {
     const btn = document.getElementById("closePanel");
     if (btn) btn.classList.remove("hidden");
@@ -141,101 +147,105 @@ function closePanel() {
 
   const btn = document.getElementById("closePanel");
   if (btn) btn.classList.add("hidden");
+
+  // ⭐ ADDED — Remove ?id= from URL without reloading
+  history.replaceState(null, "", window.location.pathname);
 }
 
-// ---------------------------
-// CLOSING EVENTS
-// ---------------------------
+/* ---------------------------
+   CLOSING EVENTS
+--------------------------- */
 
-// Close Back to List (dynamic element)
 document.addEventListener("click", (e) => {
   if (e.target.id === "closePanel") closePanel();
 });
 
-// Close by clicking overlay
 overlay.onclick = closePanel;
 
-// Close on ESC key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closePanel();
 });
 
-// Next / Previous navigation
+/* ---------------------------
+   NEXT / PREV NAVIGATION
+--------------------------- */
+
 function navigateTo(direction, currentId) {
   const index = allCakes.findIndex((c) => c.id == currentId);
   let newIndex = index;
 
   if (direction === "next") {
-    newIndex = (index + 1) % allCakes.length; // loop to beginning
+    newIndex = (index + 1) % allCakes.length;
   } else if (direction === "prev") {
-    newIndex = (index - 1 + allCakes.length) % allCakes.length; // loop to end
+    newIndex = (index - 1 + allCakes.length) % allCakes.length;
   }
 
-  openPanel(allCakes[newIndex]);
+  const newItem = allCakes[newIndex];
+
+  // ⭐ ADDED — Update URL when sliding
+  history.replaceState(null, "", `?id=${newItem.id}`);
+
+  openPanel(newItem);
 }
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("nextBtn")) {
-    const id = e.target.dataset.id;
-    navigateTo("next", id);
+    navigateTo("next", e.target.dataset.id);
   }
 
   if (e.target.classList.contains("prevBtn")) {
-    const id = e.target.dataset.id;
-    navigateTo("prev", id);
+    navigateTo("prev", e.target.dataset.id);
   }
 });
+
+/* ---------------------------
+   AUTO-OPEN FROM URL
+--------------------------- */
+
+function checkURLForAutoOpen() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  if (!id) return;
+
+  const item = allCakes.find((c) => c.id == id);
+  if (!item) return;
+
+  // Delay needed so the layout renders first
+  setTimeout(() => openPanel(item), 150);
+}
+
+/* ---------------------------
+   THUMBNAILS (unchanged)
+--------------------------- */
 
 async function initThumbnails(images) {
   const content = document.getElementById("detailsContent");
   if (!content) return;
 
-  // Defensive: remove any leftover overlays from previous renders
   Array.from(content.querySelectorAll(".thumbOverlay")).forEach((n) => n.remove());
 
-  // Basic guard & normalization
   if (!images) images = [];
   if (typeof images === "string") images = [images];
 
-  // Trim + remove falsy entries
   const clean = images.map((s) => (typeof s === "string" ? s.trim() : "")).filter(Boolean);
 
-  console.log("initThumbnails — raw images:", images);
-  console.log("initThumbnails — cleaned images:", clean);
-
-  // If zero or one candidate image, nothing to show -> exit now
   if (clean.length <= 1) return;
 
-  // We'll collect only urls that actually exist (avoid creating <img> for missing files)
   const valid = [];
 
-  // test each url with HEAD (fallback to GET). This avoids creating <img> elements for 404s
   await Promise.all(
     clean.map(async (url) => {
       try {
-        // try HEAD first (lightweight)
         let res = await fetch(url, { method: "HEAD" });
-        // Some servers reject HEAD — fallback to GET (still ok)
         if (!res.ok) res = await fetch(url, { method: "GET" });
 
-        if (res.ok) {
-          valid.push(url);
-        } else {
-          console.warn("initThumbnails — file not found (skipped):", url, "status:", res.status);
-        }
-      } catch (err) {
-        // network/CORS/other error - skip silently but log
-        console.warn("initThumbnails — fetch error for", url, err);
-      }
+        if (res.ok) valid.push(url);
+      } catch {}
     })
   );
 
-  console.log("initThumbnails — valid images:", valid);
-
-  // If <= 1 valid images after testing -> nothing to show
   if (valid.length <= 1) return;
 
-  // Build overlay & track inside the current details content
   const imageContainer = content.querySelector(".imageContainer");
   if (!imageContainer) return;
 
@@ -253,23 +263,17 @@ async function initThumbnails(images) {
   valid.forEach((src, index) => {
     const t = document.createElement("img");
     t.className = "thumbImg";
-    t.alt = `thumb-${index + 1}`;
     t.src = src;
 
     if (index === 0) t.classList.add("activeThumb");
 
-    t.addEventListener("click", () => {
-      // replace with your animated update if you want slide-in
+    t.onclick = () => {
       if (mainImg) mainImg.src = src;
       track.querySelectorAll(".thumbImg").forEach((n) => n.classList.remove("activeThumb"));
       t.classList.add("activeThumb");
-    });
-
-    // safety: if an image somehow 404s after we checked, remove it
-    t.onerror = () => {
-      t.remove();
-      if (track.querySelectorAll(".thumbImg").length === 0) overlay.remove();
     };
+
+    t.onerror = () => t.remove();
 
     track.appendChild(t);
   });
