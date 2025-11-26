@@ -72,13 +72,34 @@ function openPanel(item) {
   detailsContent.innerHTML = `
 <div class="imageContainer">
 
-  <img id="mainLargeImage" src="${firstImage}" class="panel-img" alt="${item.name}" />
-
-  <div class="thumbOverlay">
-      <div class="thumbTrack"></div>
+  <!-- MAIN SWIPER -->
+  <div class="swiper mainSwiper">
+    <div class="swiper-wrapper">
+      ${item.images.map((img) => `<div class="swiper-slide"><img src="${img}" /></div>`).join("")}
+    </div>
   </div>
 
+${
+  item.images && item.images.length > 1
+    ? `
+<div class="thumbSwiperWrapper">
+  <div class="thumb-nav prev-thumb">←</div>
+
+  <div class="swiper thumbSwiper">
+    <div class="swiper-wrapper">
+      ${item.images.map((img) => `<div class="swiper-slide"><img src="${img}" /></div>`).join("")}
+    </div>
+  </div>
+
+  <div class="thumb-nav next-thumb">→</div>
 </div>
+    `
+    : ""
+}
+
+
+</div>
+
 
 
 <div class="panelTxt">
@@ -128,9 +149,7 @@ function openPanel(item) {
 </div>
 
 </div>
-  `;
-
-  if (item.images) initThumbnails(item.images);
+ `;
 
   panel.classList.add("open");
   overlay.classList.add("show");
@@ -139,6 +158,33 @@ function openPanel(item) {
     const btn = document.getElementById("closePanel");
     if (btn) btn.classList.remove("hidden");
   }, 0);
+
+  // Wait for DOM to update
+  setTimeout(() => {
+    const hasThumbs = item.images && item.images.length > 1;
+
+    let thumbSwiper = null;
+
+    if (hasThumbs) {
+      thumbSwiper = new Swiper(".thumbSwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        freeMode: true,
+        watchSlidesProgress: true,
+
+        navigation: {
+          nextEl: ".next-thumb",
+          prevEl: ".prev-thumb",
+        },
+      });
+    }
+
+    new Swiper(".mainSwiper", {
+      spaceBetween: 10,
+      loop: hasThumbs, // only loop if more than 1
+      thumbs: hasThumbs ? { swiper: thumbSwiper } : {},
+    });
+  }, 50);
 }
 
 function closePanel() {
@@ -212,69 +258,4 @@ function checkURLForAutoOpen() {
 
   // Delay needed so the layout renders first
   setTimeout(() => openPanel(item), 150);
-}
-
-/* ---------------------------
-   THUMBNAILS (unchanged)
---------------------------- */
-
-async function initThumbnails(images) {
-  const content = document.getElementById("detailsContent");
-  if (!content) return;
-
-  Array.from(content.querySelectorAll(".thumbOverlay")).forEach((n) => n.remove());
-
-  if (!images) images = [];
-  if (typeof images === "string") images = [images];
-
-  const clean = images.map((s) => (typeof s === "string" ? s.trim() : "")).filter(Boolean);
-
-  if (clean.length <= 1) return;
-
-  const valid = [];
-
-  await Promise.all(
-    clean.map(async (url) => {
-      try {
-        let res = await fetch(url, { method: "HEAD" });
-        if (!res.ok) res = await fetch(url, { method: "GET" });
-
-        if (res.ok) valid.push(url);
-      } catch {}
-    })
-  );
-
-  if (valid.length <= 1) return;
-
-  const imageContainer = content.querySelector(".imageContainer");
-  if (!imageContainer) return;
-
-  const overlay = document.createElement("div");
-  overlay.className = "thumbOverlay";
-
-  const track = document.createElement("div");
-  track.className = "thumbTrack";
-
-  overlay.appendChild(track);
-  imageContainer.appendChild(overlay);
-
-  const mainImg = content.querySelector("#mainLargeImage");
-
-  valid.forEach((src, index) => {
-    const t = document.createElement("img");
-    t.className = "thumbImg";
-    t.src = src;
-
-    if (index === 0) t.classList.add("activeThumb");
-
-    t.onclick = () => {
-      if (mainImg) mainImg.src = src;
-      track.querySelectorAll(".thumbImg").forEach((n) => n.classList.remove("activeThumb"));
-      t.classList.add("activeThumb");
-    };
-
-    t.onerror = () => t.remove();
-
-    track.appendChild(t);
-  });
 }
