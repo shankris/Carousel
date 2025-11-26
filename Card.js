@@ -61,11 +61,18 @@ function openPanel(item) {
   const firstImage = item.images?.[0] ?? item.image ?? "";
 
   detailsContent.innerHTML = `
-<div class="cardCarousel">
-  <div class="imageContainer">
-    <img src="${firstImage}" class="panel-img" alt="${item.name}" />
+<div class="imageContainer">
+
+  <!-- MAIN IMAGE -->
+  <img id="mainLargeImage" src="${firstImage}" class="panel-img" alt="${item.name}" />
+
+  <!-- THUMBNAILS OVERLAY INSIDE IMAGE -->
+  <div class="thumbOverlay">
+      <div class="thumbTrack"></div>
   </div>
+
 </div>
+
 
 <div class="panelTxt">
   <h2 class="detailsH2">${item.name}</h2>
@@ -115,6 +122,8 @@ function openPanel(item) {
 
 </div>
   `;
+
+  if (item.images) initThumbnails(item.images);
 
   panel.classList.add("open");
   overlay.classList.add("show");
@@ -176,3 +185,26 @@ document.addEventListener("click", (e) => {
     navigateTo("prev", id);
   }
 });
+
+function initThumbnails(images) {
+  const track = document.querySelector(".thumbTrack");
+  const mainImg = document.getElementById("mainLargeImage");
+
+  track.innerHTML = ""; // reset
+
+  images.forEach((src, index) => {
+    const t = document.createElement("img");
+    t.src = src;
+    t.className = "thumbImg";
+
+    if (index === 0) t.classList.add("activeThumb");
+
+    t.onclick = () => {
+      mainImg.src = src;
+      document.querySelectorAll(".thumbImg").forEach((i) => i.classList.remove("activeThumb"));
+      t.classList.add("activeThumb");
+    };
+
+    track.appendChild(t);
+  });
+}

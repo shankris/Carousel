@@ -306,6 +306,46 @@
   background: #7a7a7a;
 }
 
+/* Container that floats inside the image */
+.thumbOverlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Horizontal row of thumbnails */
+.thumbTrack {
+  display: flex;
+  gap: 8px;
+  padding: 0 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.thumbTrack::-webkit-scrollbar {
+  display: none;
+}
+
+/* Thumbnail images */
+.thumbImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  object-fit: cover;
+  opacity: 0.6;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbImg.activeThumb {
+  opacity: 1;
+  border-color: white;
+}
 
 
 @media (max-width: 768px) {
