@@ -17,8 +17,11 @@ function renderCards(list) {
     const card = document.createElement("div");
     card.className = "card";
 
+    // pick the first image from images[] if present, otherwise fall back to image
+    const firstImage = item.images?.[0] ?? item.image ?? "";
+
     card.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
+      <img src="${firstImage}" alt="${item.name}">
       
       <div class="section info">
         <div class="title">${item.name}</div>
@@ -54,10 +57,13 @@ document.addEventListener("click", (e) => {
 });
 
 function openPanel(item) {
+  // pick the first image from item.images or fall back to item.image
+  const firstImage = item.images?.[0] ?? item.image ?? "";
+
   detailsContent.innerHTML = `
 <div class="cardCarousel">
   <div class="imageContainer">
-    <img src="${item.image}" class="panel-img" alt="${item.name}" />
+    <img src="${firstImage}" class="panel-img" alt="${item.name}" />
   </div>
 </div>
 
