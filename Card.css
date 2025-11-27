@@ -193,7 +193,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 15px 0;
+  padding: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
   z-index: 20;
   pointer-events: auto;

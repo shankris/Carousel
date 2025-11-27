@@ -148,7 +148,7 @@
     "name": "Blueberry Cake",
     "price": "850",
     "price2": "1,700",
-    "images": ["public/08.jpg", "public/08_2.jpg", "public/08_3.jpg"],
+    "images": ["public/BlueberyCake_1.jpg", "public/BlueberyCake_2.jpg", "public/BlueberyCake_3.jpg"],
     "tags": [],
     "smallDesc": "Content to be added",
     "description": "Content to be added",

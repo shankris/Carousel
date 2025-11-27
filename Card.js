@@ -83,7 +83,6 @@ ${
   item.images && item.images.length > 1
     ? `
 <div class="thumbSwiperWrapper">
-  <div class="thumb-nav prev-thumb">←</div>
 
   <div class="swiper thumbSwiper">
     <div class="swiper-wrapper">
@@ -91,7 +90,6 @@ ${
     </div>
   </div>
 
-  <div class="thumb-nav next-thumb">→</div>
 </div>
     `
     : ""
@@ -167,15 +165,18 @@ ${
 
     if (hasThumbs) {
       thumbSwiper = new Swiper(".thumbSwiper", {
-        slidesPerView: "auto",
-        spaceBetween: 10,
-        freeMode: true,
-        watchSlidesProgress: true,
+        slidesPerView: "auto", // automatically fit as many slides as possible
+        spaceBetween: 4, // 8px gap between thumbnails
+        freeMode: true, // allow free scrolling
+        watchSlidesProgress: true, // sync with main swiper
+        allowTouchMove: true, // allow swipe on mobile
 
-        navigation: {
-          nextEl: ".next-thumb",
-          prevEl: ".prev-thumb",
-        },
+        // remove navigation arrows completely
+        navigation: false,
+        // no pagination needed for thumbnails
+
+        // optional: slower transition when clicking thumbnail
+        speed: 600, // 600ms transition when mainSwiper slides
       });
     }
 
