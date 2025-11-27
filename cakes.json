@@ -22,7 +22,7 @@
     "name": "Chocolate Cheesecake",
     "price": "1,400",
     "price2": "2,400",
-    "images": ["public/02_ChocolateCheeseCake.jpg", "public/02_ChocolateCheeseCake_2.jpg", "public/02_ChocolateCheeseCake_3.jpg"],
+    "images": ["public/02_ChocolateCheeseCake.jpg", "public/02_ChocolateCheeseCake_2.jpg"],
     "tags": [],
     "smallDesc": "Decadent triple-chocolate dream! Layers of rich, creamy chocolate mousse and cake await.",
     "description": "Unleash your inner chocoholic with our stunning layered chocolate cake. Featuring rich, velvety mousse atop a moist brownie-like base, each generous slice reveals a delightful blend of textures. This is the ultimate sophisticated treat, promising an unforgettable taste experience for any celebration or sweet craving.",
