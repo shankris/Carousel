@@ -183,6 +183,11 @@ ${
     new Swiper(".mainSwiper", {
       spaceBetween: 10,
       loop: hasThumbs, // only loop if more than 1
+      speed: 1000,
+      autoplay: {
+        delay: 4000, // 2.5 seconds per slide
+        disableOnInteraction: false, // keep autoplay even if user swipes
+      },
       thumbs: hasThumbs ? { swiper: thumbSwiper } : {},
     });
   }, 50);
