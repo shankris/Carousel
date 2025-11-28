@@ -60,6 +60,7 @@
   color: #c5c5c5;
   padding: 10px;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .card .section {
@@ -200,14 +201,14 @@
 }
 
 .thumbSwiper {
-  height: 90px;
+  height: 70px;
   padding: 5px 0;
   overflow: visible;
 }
 
 .thumbSwiper .swiper-slide {
-  width: 90px !important;
-  height: 90px !important;
+  width: 60px !important;
+  height: 60px !important;
   flex: 0 0 auto !important;
 }
 
@@ -334,7 +335,8 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: auto;
+  padding-bottom: 10px;
 }
 
 .navBtn {
