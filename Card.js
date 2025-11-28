@@ -134,11 +134,14 @@ ${
 
     <div class="label">Price</div>
     <div class="value">
-    ₹ <span class="price">${item.price}</span> - 500 g<br/>
-    ₹ <span class="price">${item.price2}</span> - 1 Kg
+
+    <div class="priceOptions">
+      <div class="option"><span class="weight">500 g</span><br> ₹ <span class="price">${item.price}</span></div>
+      <div class="option"><span class="weight">1 kg</span><br>  ₹ <span class="price">${item.price2}</span></div>
     </div>
 
   </div>
+    </div>
 
 <div class="navBar">
   <button class="navBtn prevBtn" data-id="${item.id}">←</button>

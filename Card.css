@@ -386,6 +386,20 @@
   right: 10px;
 }
 
+.priceOptions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.option {
+  min-width: 100px;
+}
+
+.option .weight {
+  font-size: 11px;
+  color: #bbbbbb;
+}
 
 
 /* ——————————————————————
@@ -404,8 +418,17 @@
 
   .panelTxt {
     width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
     padding: 10px;
     max-height: none;
+  }
+
+  .navBar {
+    margin-top: auto;
+    /* ⬅ stays at the bottom */
   }
 
   .cardCarousel {
