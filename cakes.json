@@ -58,7 +58,7 @@
     "name": "Sponge Cake",
     "price": "750",
     "price2": "1,200",
-    "images": ["public/04_SpongeCake.jpg"],
+    "images": ["public/SpongeCake_1.jpg", "public/SpongeCake_2.jpg", "public/SpongeCake_3.jpg"],
     "tags": [],
     "smallDesc": "Content to be added",
     "description": "Content to be added",
