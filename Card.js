@@ -105,11 +105,6 @@ ${
   <div class="description">${item.description}</div>
 
   <div class="details-table">
-    <div class="label">Category</div>
-    <div class="value">${item.category || "—"}</div>
-
-    <div class="label">Weight</div>
-    <div class="value">${item.weight || "—"}</div>
 
     <div class="label">Delivery time</div>
     <div class="value">${item.deliveryTime || "—"}</div>
@@ -125,12 +120,6 @@ ${
       `
         : ""
     }
-
-    <div class="label">Tags</div>
-    <div class="value">${item.tags?.join(", ") || "None"}</div>
-
-    <div class="label">Rating</div>
-    <div class="value">★ ${item.rating}</div>
 
     <div class="label">Price</div>
     <div class="value">
