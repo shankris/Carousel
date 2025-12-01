@@ -40,11 +40,12 @@
 .card {
   background: rgb(78, 78, 78);
   border-radius: 4px;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 500px;
+  position: relative;
 }
 
 .card img {
@@ -399,6 +400,65 @@
 .option .weight {
   font-size: 11px;
   color: #bbbbbb;
+}
+
+
+/* ------------------------------------- */
+/*           Ribbob Code                 */
+/* ------------------------------------- */
+
+/* Ribbon 1 */
+.ribbon1 {
+  position: absolute;
+  top: -6.1px;
+  left: 10px;
+  color: #fff;
+}
+
+.ribbon1:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 53px solid transparent;
+  border-right: 53px solid transparent;
+  border-top: 10px solid #f8463f;
+}
+
+.ribbon1 span.content {
+  position: relative;
+  display: block;
+  text-align: center;
+  background: #f8463f;
+  font-size: 14px;
+  line-height: 1;
+  padding: 10px 8px 8px;
+  border-top-right-radius: 8px;
+  width: 105px;
+  text-transform: uppercase;
+}
+
+.ribbon1 span:before,
+.ribbon1 span:after {
+  position: absolute;
+  content: "";
+}
+
+.ribbon1 span:before {
+  height: 6px;
+  width: 6px;
+  left: -6px;
+  top: 0;
+  background: #f8463f;
+}
+
+.ribbon1 span:after {
+  height: 6px;
+  width: 8px;
+  left: -8px;
+  top: 0;
+  border-radius: 8px 8px 0 0;
+  background: #c02031;
 }
 
 

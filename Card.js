@@ -23,6 +23,9 @@ function renderCards(list) {
     const firstImage = item.images?.[0] ?? item.image ?? "";
 
     card.innerHTML = `
+
+  ${item.bestSeller ? `<span class="ribbon1"><span class="content">Bestseller</span></span>` : ""}
+
       <img src="${firstImage}" alt="${item.name}">
       
       <div class="section info">

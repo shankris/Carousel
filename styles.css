@@ -199,8 +199,8 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 60%;
-  max-width: 500px;
+  width: 550px;
+  max-width: 80%;
 }
 
 .intro h1,
@@ -545,8 +545,8 @@ section {
 
 
   .intro-text {
-    Width: 96%;
-    top: 82%;
+    Width: 100%;
+    /* top: 82%; */
   }
 
   h1 {

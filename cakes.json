@@ -14,7 +14,7 @@
     "category": "Tea Cakes",
     "specialThisWeek": true,
     "deliveryTime": "Same-day delivery",
-    "bestSeller": true,
+    "bestSeller": false,
     "shelfLife": "3 days"
   },
   {
@@ -32,7 +32,7 @@
     "category": "Tea Cakes",
     "specialThisWeek": false,
     "deliveryTime": "Next-day delivery",
-    "bestSeller": false,
+    "bestSeller": true,
     "shelfLife": "15 days"
   },
   {
@@ -86,7 +86,7 @@
     "category": "Tea Cakes",
     "specialThisWeek": false,
     "deliveryTime": "Next-day delivery",
-    "bestSeller": true,
+    "bestSeller": false,
     "shelfLife": "7 days"
   },
   {
@@ -158,7 +158,7 @@
     "category": "Tea Cakes",
     "specialThisWeek": false,
     "deliveryTime": "2 days",
-    "bestSeller": false,
+    "bestSeller": true,
     "shelfLife": "3 days"
   },
   {
@@ -212,7 +212,7 @@
     "category": "Brownie",
     "specialThisWeek": true,
     "deliveryTime": "2 days",
-    "bestSeller": false,
+    "bestSeller": true,
     "shelfLife": "10 days"
   },
   {
@@ -230,7 +230,7 @@
     "category": "Brownie",
     "specialThisWeek": true,
     "deliveryTime": "2 days",
-    "bestSeller": false,
+    "bestSeller": true,
     "shelfLife": "10 days"
   },
   {
