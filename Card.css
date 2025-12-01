@@ -422,14 +422,14 @@
   height: 0;
   border-left: 53px solid transparent;
   border-right: 53px solid transparent;
-  border-top: 10px solid #f8463f;
+  border-top: 10px solid #404e78;
 }
 
 .ribbon1 span.content {
   position: relative;
   display: block;
   text-align: center;
-  background: #f8463f;
+  background: #404e78;
   font-size: 14px;
   line-height: 1;
   padding: 10px 8px 8px;
@@ -449,7 +449,7 @@
   width: 6px;
   left: -6px;
   top: 0;
-  background: #f8463f;
+  background: #404e78;
 }
 
 .ribbon1 span:after {
@@ -458,7 +458,7 @@
   left: -8px;
   top: 0;
   border-radius: 8px 8px 0 0;
-  background: #c02031;
+  background: #404e78;
 }
 
 
