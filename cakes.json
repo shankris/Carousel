@@ -184,7 +184,7 @@
     "name": "Dry Fruit Cake",
     "price": "740",
     "price2": "1,480",
-    "images": ["public/10_EgglesDryFruitCake.jpg"],
+    "images": ["public/DryFruitCake_1.jpg", "public/DryFruitCake_2.jpg", "public/DryFruitCake_3.jpg", "public/DryFruitCake_4.jpg"],
     "tags": ["Eggless"],
     "smallDesc": "Rich, moist eggless dry fruit cake! Bursting with nuts and dried fruits, a delightful treat for every occasion.",
     "description": "Indulge in the heartwarming taste of our exquisite eggless dry fruit cake, a festive favorite perfect for any celebration. Each wonderfully moist slice is generously packed with a medley of premium dried fruits and crunchy nuts, offering a delightful texture and burst of flavor in every bite. It's a truly special, inclusive treat designed to bring joy and deliciousness to everyone.",
