@@ -365,6 +365,41 @@ section {
 }
 
 
+/* ==========================================  */
+/*          Language switcher styles           */
+/* ==========================================  */
+
+.lang-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  width: 60px;
+}
+
+.lang-toggle img {
+  width: 30px;
+  height: auto;
+  border-radius: 4px;
+}
+
+#langFlag {
+  width: 30px;
+}
+
+.lang-toggle span {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  background: #ffffff50;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+
+
+
 /* ==========================================
    MOBILE BOTTOM NAV USING SVG ICONS
 ========================================== */

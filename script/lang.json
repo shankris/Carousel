@@ -1,0 +1,51 @@
+{
+  "en": {
+    "nav_home": "Home",
+    "nav_products": "Products",
+    "nav_about": "About",
+    "nav_contact": "Contact",
+
+    "intro_title": "Small Batch - Big Flavor\nHomemade Goodness",
+    "intro_sub": "We believe the best cakes come from real butter, fresh eggs, and patience. Taste the difference of quality, made-to-order baking, every single time.",
+
+    "outro_title": "A Flavor for Every Celebration",
+    "outro_sub": "From light fruit and cream to intense chocolate decadence, explore our full range of signature cakes and find your perfect centerpiece.",
+
+    "aboutTitle1": "Welcome to my Home-based Bakery!",
+    "aboutP1": "Hello! I am Aakshi, I live in the NCR Region, where I create all my sweet treats.",
+    "aboutP2": "My culinary journey began in my earliest years, growing from a cherished pastime into a passionate hobby, and ultimately blossoming into a full-fledged home-based bakery. Driven by a seasoned professional's touch, my greatest joy remains transforming simple ingredients into delicious sweet moments.",
+    "aboutP3": "At Aakshi's, you won't find the rush or repetition of an industrial assembly line. Instead, you'll discover a commitment to genuine craftsmanship. Each cake, cookie, and treat is crafted with personal care and professionalism for exceptional taste and quality.",
+    "aboutP4": "Life is full of small and big moments worth savoring. At Aakshi's, we believe every milestone—big or small—is a reason to indulge. Let us help you turn your moments into sweet memories. As they say — Kuch Meetha Ho Jaye!!",
+    "aboutP5": "I look forward to sharing my passion for baking and serving you delicious, heartfelt treats. Thank you for visiting my home on the web. Please visit again!",
+
+    "aboutTitle2": "Online Masterclass Live from my Home Bakery",
+    "aboutP6": "Ever dreamt of baking those perfect cookies or a stunning celebration cake at home? Join Aakshi's Online Baking Masterclasses and learn to bake with confidence.",
+    "aboutP7": "Whether you're a beginner or looking to improve, our interactive online classes bring professional techniques directly to you. Small groups, practical tips, and live Q&A make learning fun and effective. Classes are available in Hindi and English.",
+    "aboutP8": "Let's bake something special together! Explore our upcoming class schedule and discover the baker within you."
+  },
+
+  "hi": {
+    "nav_home": "होम",
+    "nav_products": "ट्रीट्स",
+    "nav_about": "हमारे बारे में",
+    "nav_contact": "संपर्क",
+
+    "intro_title": "छोटा बैच – बड़ा स्वाद\nघर जैसा ताज़ा स्वाद",
+    "intro_sub": "हम मानते हैं कि सबसे अच्छे केक असली मक्खन, ताज़े अंडे और धैर्य से बनते हैं। हर बार ऑर्डर-पर-बनी, गुणवत्तापूर्ण बेकिंग का असली फर्क चखें।",
+
+    "outro_title": "हर सेलिब्रेशन के लिए परफ़ेक्ट स्वाद",
+    "outro_sub": "हल्के फल-क्रीम से लेकर गहरे चॉकलेट केक तक — हमारे सभी सिग्नेचर केक खोजें और अपने लिए परफ़ेक्ट सेंटरपीस चुनें।",
+
+    "aboutTitle1": "मेरी होम-बेस्ड बेकरी में आपका स्वागत है!",
+    "aboutP1": "नमस्ते! मैं आक्शी हूँ। मैं एनसीआर क्षेत्र में रहती हूँ, जहाँ मैं अपने सभी मीठे व्यंजन बनाती हूँ।",
+    "aboutP2": "मेरी पाक यात्रा बचपन से शुरू हुई—एक शौक के रूप में, जो बाद में एक जुनून बना और फिर एक पूर्णकालिक होम-बेस्ड बेकरी में बदल गया। सरल सामग्री को स्वादिष्ट पलों में बदलना ही मेरी सबसे बड़ी खुशी है।",
+    "aboutP3": "आक्शी's में आपको किसी इंडस्ट्रियल असेंबली लाइन की जल्दीबाज़ी नहीं मिलेगी। यहाँ हर केक, कुकी और ट्रीट को प्यार, देखभाल और प्रोफेशनलिज़्म के साथ बनाया जाता है ताकि आपको बेहतरीन स्वाद और गुणवत्ता मिले।",
+    "aboutP4": "ज़िंदगी छोटे-बड़े पलों से भरी है जिन्हें मनाया जाना चाहिए। हम मानते हैं कि हर उपलब्धि और हर छोटी खुशी कुछ मीठा खाने का बहाना है। आइए हम आपकी मीठी यादें बनाने में आपकी मदद करें — जैसा कि कहते हैं, कुछ मीठा हो जाए!!",
+    "aboutP5": "मुझे अपने बेकिंग के जुनून को आपके साथ साझा करने की खुशी है। मेरे इस छोटे से ऑनलाइन घर पर आने के लिए धन्यवाद। फिर से जरूर आएं!",
+
+    "aboutTitle2": "मेरी होम बेकरी से लाइव ऑनलाइन मास्टरक्लास",
+    "aboutP6": "क्या आपने कभी सोचा है कि बिल्कुल परफेक्ट कुकीज़ या खूबसूरत केक घर पर बनाएं? अब यह संभव है! आक्शी की ऑनलाइन बेकिंग मास्टरक्लास में जुड़ें और आत्मविश्वास के साथ बेक करना सीखें।",
+    "aboutP7": "चाहे आप शुरुआत कर रहे हों या अपने कौशल को निखारना चाहते हों—हमारी इंटरएक्टिव ऑनलाइन क्लासेज़ आपको घर बैठे प्रोफेशनल तकनीकें सिखाती हैं। छोटे बैच, आसान टिप्स और लाइव Q&A क्लास को मज़ेदार और प्रभावी बनाते हैं।",
+    "aboutP8": "आइए साथ मिलकर कुछ खास बेक करें! हमारी आने वाली क्लासेस देखें और अपने अंदर छिपे बेकर को खोजें।"
+  }
+}

@@ -37,13 +37,7 @@
   <script src="./libs/lenis.min.js"></script>
 
   <link rel="preload" href="public/slides.json" as="fetch" crossorigin="anonymous">
-  <link rel="preload" as="image" href="./public/01.jpg">
-  <link rel="preload" as="image" href="./public/02.jpg">
-  <link rel="preload" as="image" href="./public/03.jpg">
-  <link rel="preload" as="image" href="./public/04.jpg">
-  <link rel="preload" as="image" href="./public/05.jpg">
-  <link rel="preload" as="image" href="./public/06.jpg">
-  <link rel="preload" as="image" href="./public/07.jpg">
+
 
 </head>
 
@@ -55,23 +49,31 @@
       <div class="logo">
         <p>Cake<span>Studio</span></p>
       </div>
+
       <div class="site-info">
         <p>
-          <a data-icon="home" href="index.html">Home</a>
-          <a data-icon="product" href="card.htm">Products</a>
-          <a data-icon="about" href="about.htm">About</a>
-          <a data-icon="contact" href="contact.htm">Contact</a>
+          <a data-translate="nav_home" data-icon="home" href="index.html">Home</a>
+          <a data-translate="nav_products" data-icon="product" href="card.htm">Products</a>
+          <a data-translate="nav_about" data-icon="about" href="about.htm">About</a>
+          <a data-translate="nav_contact" data-icon="contact" href="contact.htm">Contact</a>
         </p>
       </div>
+
+      <div id="langToggle" class="lang-toggle">
+        <img id="langFlag" src="./public/FlagIndia.svg" alt="Switch Language">
+        <span id="langText">हिन्दी</span>
+      </div>
+
     </div>
   </nav>
 
   <section class="intro">
     <div class="intro-text">
-      <h1>
+      <h1 data-translate="intro_title">
         Small Batch - Big Flavor<br> Homemade Goodness
       </h1>
-      <h2 class="subHead">We believe the best cakes come from real butter, fresh eggs, and patience. Taste the
+      <h2 class="subHead" data-translate="intro_sub">We believe the best cakes come from real butter, fresh eggs, and
+        patience. Taste the
         difference
         of quality,
         made-to-order baking, every single time.</h2>
@@ -80,7 +82,7 @@
 
   <section class="slider">
     <div class="slider-images">
-      <img src="./public/06.jpg" alt="Slide 1" />
+      <img src="./public/img/06.jpg" alt="Slide 1" />
     </div>
 
     <div class="slider-title">
@@ -100,10 +102,11 @@
 
   <section class="outro">
     <div class="outroTxt">
-      <h1>
+      <h1 data-translate="outro_title">
         A Flavor for Every Celebration
       </h1>
-      <h2>From light fruit and cream to intense chocolate decadence, explore our full range of signature cakes and find
+      <h2 data-translate="outro_sub">From light fruit and cream to intense chocolate decadence, explore our full range
+        of signature cakes and find
         your
         perfect centerpiece.</h2>
     </div>
@@ -111,7 +114,7 @@
 
   <!-- Load JS at bottom -->
   <script src="./script.js"></script>
-
+  <script src="./script/lang.js"></script>
 
 
 </body>
