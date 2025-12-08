@@ -51,6 +51,10 @@ function updateLangToggle() {
 // Toggle language on click
 langToggle.addEventListener("click", () => {
   const newLang = currentLang === "en" ? "hi" : "en";
+
   applyLanguage(newLang);
   updateLangToggle();
+
+  // 🔥 Notify other scripts that language changed
+  window.dispatchEvent(new Event("languageChanged"));
 });

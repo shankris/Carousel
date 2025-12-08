@@ -1,15 +1,28 @@
 [
   {
-    "title": "Our Best Seller",
-    "subhead": "Elegant, small-batch perfection. Available in beautifully boxed sets, ideal for corporate gifts or party favors.",
+    "title": {
+      "en": "Our Best Seller",
+      "hi": "हमारा सबसे अधिक बिकने वाला उत्पाद"
+    },
+    "subhead": {
+      "en": "Elegant, small-batch perfection. Available in beautifully boxed sets, ideal for corporate gifts or party favors.",
+      "hi": "शानदार, छोटे-बैच की बेहतरीन गुणवत्ता। खूबसूरत बॉक्स सेट में उपलब्ध — कॉरपोरेट गिफ्ट्स और पार्टी फेवर के लिए आदर्श।"
+    },
     "imageLow": "public/low/01_low.jpg",
     "imageMobile": "public/mobile/01_phone.jpg",
     "imageTablet": "public/tablet/01.jpg",
     "image": "public/img/01.jpg"
   },
+
   {
-    "title": "The Perfect Party Starter",
-    "subhead": "Satisfy every guest with a box of our rich double chocolate chunk cookies. Effortless catering for your next big celebration.",
+    "title": {
+      "en": "The Perfect Party Starter",
+      "hi": "हर पार्टी की परफेक्ट शुरुआत"
+    },
+    "subhead": {
+      "en": "Satisfy every guest with a box of our rich double chocolate chunk cookies. Effortless catering for your next big celebration.",
+      "hi": "हमारे रिच डबल चॉकलेट चंक कुकीज़ से हर मेहमान को खुश करें। आपके अगले बड़े समारोह के लिए बिल्कुल आसान कैटरिंग।"
+    },
     "imageLow": "public/low/02_low.jpg",
     "imageMobile": "public/mobile/02_phone.jpg",
     "imageTablet": "public/tablet/02.jpg",
@@ -17,40 +30,74 @@
   },
 
   {
-    "title": "Blueberry Muffins: Baked Just for You",
-    "subhead": "Never pre-made. Order your batch 24 hours in advance to enjoy these moist, fruit-packed delights, baked fresh for your pickup or delivery.",
+    "title": {
+      "en": "Blueberry Muffins: Baked Just for You",
+      "hi": "ब्लूबेरी मफिन्स: आपके लिए ताज़ा बेक किए गए"
+    },
+    "subhead": {
+      "en": "Never pre-made. Order your batch 24 hours in advance to enjoy these moist, fruit-packed delights, baked fresh for your pickup or delivery.",
+      "hi": "कभी भी पहले से तैयार नहीं। 24 घंटे पहले ऑर्डर करें और रसदार, फलों से भरे ये स्वादिष्ट मफिन्स ताज़ा बेक किए हुए पिकअप या डिलीवरी पर पाएं।"
+    },
     "imageLow": "public/03.png",
     "imageMobile": "public/mobile/03_phone.jpg",
     "imageTablet": "public/tablet/03.jpg",
     "image": "public/img/03.jpg"
   },
+
   {
-    "title": "The Ultimate Double Chocolate Chunk",
-    "subhead": "Deep, dark cocoa dough baked until chewy, loaded and topped with generous blocks of melting dark chocolate.",
+    "title": {
+      "en": "The Ultimate Double Chocolate Chunk",
+      "hi": "अल्टीमेट डबल चॉकलेट चंक"
+    },
+    "subhead": {
+      "en": "Deep, dark cocoa dough baked until chewy, loaded and topped with generous blocks of melting dark chocolate.",
+      "hi": "गहरा, डार्क कोको डो जिसे च्यूई टेक्सचर तक बेक किया गया है—अंदर भरपूर चॉकलेट और ऊपर पिघलती डार्क चॉकलेट ब्लॉक्स।"
+    },
     "imageLow": "public/04.png",
     "imageMobile": "public/mobile/04_phone.jpg",
     "imageTablet": "public/tablet/04.jpg",
     "image": "public/img/04.jpg"
   },
+
   {
-    "title": "Festive Celebration Hamper",
-    "subhead": "Spread the joy with our limited-edition holiday box. Rich plum cake, intense chocolate treats, and festive flair—ready for gifting.",
+    "title": {
+      "en": "Festive Celebration Hamper",
+      "hi": "फेस्टिव सेलिब्रेशन हैम्पर"
+    },
+    "subhead": {
+      "en": "Spread the joy with our limited-edition holiday box. Rich plum cake, intense chocolate treats, and festive flair—ready for gifting.",
+      "hi": "हमारे लिमिटेड-एडिशन हॉलिडे बॉक्स के साथ खुशियाँ बाँटें। रिच प्लम केक, शानदार चॉकलेट ट्रीट्स और त्योहारों की झलक—गिफ्टिंग के लिए बिल्कुल तैयार।"
+    },
     "imageLow": "public/05.png",
     "imageMobile": "public/mobile/05_phone.jpg",
     "imageTablet": "public/tablet/05.jpg",
     "image": "public/img/05.jpg"
   },
+
   {
-    "title": "The Showstopper Dessert Pyramid",
-    "subhead": "Elevate your event tables with our signature almond mini-bites. Striking presentation and irresistible flavor for every guest.",
+    "title": {
+      "en": "The Showstopper Dessert Pyramid",
+      "hi": "शोस्टॉपर डेज़र्ट पिरामिड"
+    },
+    "subhead": {
+      "en": "Elevate your event tables with our signature almond mini-bites. Striking presentation and irresistible flavor for every guest.",
+      "hi": "हमारे सिग्नेचर बादाम मिनी-बाइट्स से अपने ईवेंट टेबल को खास बनाएं। शानदार प्रस्तुति और हर मेहमान के लिए लाजवाब स्वाद।"
+    },
     "imageLow": "public/06.png",
     "imageMobile": "public/mobile/06_phone.jpg",
     "imageTablet": "public/tablet/06.jpg",
     "image": "public/img/06.jpg"
   },
+
   {
-    "title": "The Ultimate Fresh Fruit Delight",
-    "subhead": "A light vanilla sponge layered with fresh cream and topped with an abundance of seasonal, hand-picked fruits and berries.",
+    "title": {
+      "en": "The Ultimate Fresh Fruit Delight",
+      "hi": "अल्टीमेट फ्रेश फ्रूट डिलाइट"
+    },
+    "subhead": {
+      "en": "A light vanilla sponge layered with fresh cream and topped with an abundance of seasonal, hand-picked fruits and berries.",
+      "hi": "हल्का वनीला स्पंज, ताज़ी क्रीम की परतों के साथ—ऊपर ढेर सारे मौसमी, हाथ से चुने फलों और बेरीज़ से सजाया गया।"
+    },
     "imageLow": "public/07.png",
     "imageMobile": "public/mobile/07_phone.jpg",
     "imageTablet": "public/tablet/07.jpg",
