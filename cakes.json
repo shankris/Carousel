@@ -430,5 +430,23 @@
     "deliveryTime": "2 days",
     "bestSeller": false,
     "shelfLife": "10 days"
+  },
+  {
+    "id": 25,
+    "name": "Wholewheat Cookies",
+    "price": "740",
+    "price2": "1,480",
+    "images": ["public/WholewheatCookies_1.jpg", "public/WholewheatCookies_2.jpg", "public/WholewheatCookies_3.jpg"],
+    "tags": ["Eggless"],
+    "smallDesc": "Text to be added",
+    "description": "Text to be added",
+    "rating": 4.6,
+    "popularity": 73,
+    "weight": "500 g, 1 Kg",
+    "category": "Cookies",
+    "specialThisWeek": true,
+    "deliveryTime": "2 days",
+    "bestSeller": false,
+    "shelfLife": "10 days"
   }
 ]
