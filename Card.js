@@ -1,19 +1,31 @@
+/* ===============================
+   GLOBAL STATE
+================================ */
 let allCakes = [];
 
-// Load JSON
+/* helper — always read language from lang.js */
+function lang() {
+  return window.currentLang || "en";
+}
+
+/* ===============================
+   LOAD JSON
+================================ */
 fetch("cakes.json")
   .then((res) => res.json())
   .then((data) => {
     allCakes = data;
     renderCards(allCakes);
-
-    // ⭐ ADDED — Auto-open panel if URL contains ?id=
     checkURLForAutoOpen();
   });
 
-// Render Cards
+/* ===============================
+   RENDER CARDS
+================================ */
 function renderCards(list) {
   const container = document.getElementById("cakeGrid");
+  if (!container) return;
+
   container.innerHTML = "";
 
   list.forEach((item) => {
@@ -23,15 +35,22 @@ function renderCards(list) {
     const firstImage = item.images?.[0] ?? item.image ?? "";
 
     card.innerHTML = `
+      ${
+        item.bestSeller
+          ? `<span class="ribbon1">
+               <span class="content">
+                 ${lang() === "hi" ? "बेस्टसेलर" : "Bestseller"}
+               </span>
+             </span>`
+          : ""
+      }
 
-  ${item.bestSeller ? `<span class="ribbon1"><span class="content">Bestseller</span></span>` : ""}
+      <img src="${firstImage}" alt="${item.name[lang()]}">
 
-      <img src="${firstImage}" alt="${item.name}">
-      
       <div class="section info">
-        <div class="title">${item.name}</div>
-        <div class="desc">${item.smallDesc}</div>
-        
+        <div class="title">${item.name[lang()]}</div>
+        <div class="desc">${item.smallDesc[lang()]}</div>
+
         <div class="tags">
           ${item.tags.map((t) => `<span class="tag">${t}</span>`).join("")}
         </div>
@@ -39,7 +58,7 @@ function renderCards(list) {
 
       <div class="section footer">
         <a class="more" href="?id=${item.id}" data-id="${item.id}">
-          Find out more ...
+          ${lang() === "hi" ? "और देखें ..." : "Find out more ..."}
         </a>
       </div>
     `;
@@ -48,215 +67,185 @@ function renderCards(list) {
   });
 }
 
-/* ---------------------
-   DETAILS PANEL LOGIC
----------------------- */
+/* ===============================
+   DETAILS PANEL
+================================ */
 const panel = document.getElementById("detailsPanel");
 const overlay = document.getElementById("overlay");
 const detailsContent = document.getElementById("detailsContent");
 
+/* open from card click */
 document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("more")) {
-    const id = e.target.dataset.id;
-    const item = allCakes.find((c) => c.id == id);
+  if (!e.target.classList.contains("more")) return;
 
-    // ⭐ ADDED — Update URL when clicked (no page reload)
-    history.replaceState(null, "", `?id=${id}`);
+  const id = e.target.dataset.id;
+  const item = allCakes.find((c) => c.id == id);
+  if (!item) return;
 
-    openPanel(item);
+  history.replaceState(null, "", `?id=${id}`);
+  openPanel(item);
 
-    e.preventDefault(); // stop normal navigation
-  }
+  e.preventDefault();
 });
 
 function openPanel(item) {
-  const firstImage = item.images?.[0] ?? item.image ?? "";
-
   detailsContent.innerHTML = `
 <div class="imageContainer">
 
-  <!-- MAIN SWIPER -->
   <div class="swiper mainSwiper">
     <div class="swiper-wrapper">
-      ${item.images.map((img) => `<div class="swiper-slide"><img src="${img}" /></div>`).join("")}
+      ${item.images.map((img) => `<div class="swiper-slide"><img src="${img}"></div>`).join("")}
     </div>
   </div>
 
-${
-  item.images && item.images.length > 1
-    ? `
-<div class="thumbSwiperWrapper">
-
-  <div class="swiper thumbSwiper">
-    <div class="swiper-wrapper">
-      ${item.images.map((img) => `<div class="swiper-slide"><img src="${img}" /></div>`).join("")}
-    </div>
-  </div>
-
+  ${
+    item.images.length > 1
+      ? `
+      <div class="thumbSwiperWrapper">
+        <div class="swiper thumbSwiper">
+          <div class="swiper-wrapper">
+            ${item.images.map((img) => `<div class="swiper-slide"><img src="${img}"></div>`).join("")}
+          </div>
+        </div>
+      </div>
+      `
+      : ""
+  }
 </div>
-    `
-    : ""
-}
-
-
-</div>
-
-
 
 <div class="panelTxt">
-  <h2 class="detailsH2">${item.name}</h2>
-  <div class="description">${item.description}</div>
+  <h2 class="detailsH2">${item.name[lang()]}</h2>
+  <div class="description">${item.description[lang()]}</div>
 
   <div class="details-table">
+    <div class="label">${lang() === "hi" ? "डिलीवरी समय" : "Delivery time"}</div>
+    <div class="value">${item.deliveryTime?.[lang()] || "—"}</div>
 
-    <div class="label">Delivery time</div>
-    <div class="value">${item.deliveryTime || "—"}</div>
-
-    <div class="label">Shelf life</div>
-    <div class="value">${item.shelfLife || "—"}</div>
+    <div class="label">${lang() === "hi" ? "शेल्फ लाइफ" : "Shelf life"}</div>
+    <div class="value">${item.shelfLife?.[lang()] || "—"}</div>
 
     ${
-      item.bestSeller === true
+      item.bestSeller
         ? `
-        <div class="label">Bestseller</div>
-        <div class="value">Yes</div>
-      `
+        <div class="label">${lang() === "hi" ? "बेस्टसेलर" : "Bestseller"}</div>
+        <div class="value">${lang() === "hi" ? "हाँ" : "Yes"}</div>
+        `
         : ""
     }
 
-    <div class="label">Price</div>
+    <div class="label">${lang() === "hi" ? "कीमत" : "Price"}</div>
     <div class="value">
-
-    <div class="priceOptions">
-      <div class="option"><span class="weight">500 g</span><br> ₹ <span class="price">${item.price}</span></div>
-      <div class="option"><span class="weight">1 kg</span><br>  ₹ <span class="price">${item.price2}</span></div>
+      <div class="priceOptions">
+        <div class="option">
+          <span class="weight">500 g</span><br>
+          ₹ <span class="price">${item.price}</span>
+        </div>
+        <div class="option">
+          <span class="weight">1 kg</span><br>
+          ₹ <span class="price">${item.price2}</span>
+        </div>
+      </div>
     </div>
-
   </div>
-    </div>
 
-<div class="navBar">
-  <button class="navBtn prevBtn" data-id="${item.id}">←</button>
-  <button id="closePanel" class="navBtn backBtn hidden">Back to List</button>
-  <button class="navBtn nextBtn" data-id="${item.id}">→</button>
+  <div class="navBar">
+    <button class="navBtn prevBtn" data-id="${item.id}">←</button>
+    <button id="closePanel" class="navBtn backBtn hidden">
+      ${lang() === "hi" ? "वापस जाएँ" : "Back to List"}
+    </button>
+    <button class="navBtn nextBtn" data-id="${item.id}">→</button>
+  </div>
 </div>
-
-</div>
- `;
+`;
 
   panel.classList.add("open");
   overlay.classList.add("show");
 
-  setTimeout(() => {
-    const btn = document.getElementById("closePanel");
-    if (btn) btn.classList.remove("hidden");
-  }, 0);
-
-  // Wait for DOM to update
-  setTimeout(() => {
-    const hasThumbs = item.images && item.images.length > 1;
-
-    let thumbSwiper = null;
-
-    if (hasThumbs) {
-      thumbSwiper = new Swiper(".thumbSwiper", {
-        slidesPerView: "auto", // automatically fit as many slides as possible
-        spaceBetween: 4, // 8px gap between thumbnails
-        freeMode: true, // allow free scrolling
-        watchSlidesProgress: true, // sync with main swiper
-        allowTouchMove: true, // allow swipe on mobile
-
-        // remove navigation arrows completely
-        navigation: false,
-        // no pagination needed for thumbnails
-
-        // optional: slower transition when clicking thumbnail
-        speed: 600, // 600ms transition when mainSwiper slides
-      });
-    }
-
-    new Swiper(".mainSwiper", {
-      spaceBetween: 10,
-      loop: hasThumbs, // only loop if more than 1
-      speed: 1000,
-      autoplay: {
-        delay: 3000, // 2.5 seconds per slide
-        disableOnInteraction: false, // keep autoplay even if user swipes
-      },
-      thumbs: hasThumbs ? { swiper: thumbSwiper } : {},
-    });
-  }, 50);
+  setTimeout(initSwipers, 50);
 }
 
+function initSwipers() {
+  const hasThumbs = document.querySelector(".thumbSwiper");
+
+  let thumbSwiper = null;
+
+  if (hasThumbs) {
+    thumbSwiper = new Swiper(".thumbSwiper", {
+      slidesPerView: "auto",
+      spaceBetween: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+      speed: 600,
+    });
+  }
+
+  new Swiper(".mainSwiper", {
+    spaceBetween: 10,
+    loop: !!thumbSwiper,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    thumbs: thumbSwiper ? { swiper: thumbSwiper } : {},
+  });
+}
+
+/* ===============================
+   CLOSE PANEL
+================================ */
 function closePanel() {
   panel.classList.remove("open");
   overlay.classList.remove("show");
-
-  const btn = document.getElementById("closePanel");
-  if (btn) btn.classList.add("hidden");
-
-  // ⭐ ADDED — Remove ?id= from URL without reloading
   history.replaceState(null, "", window.location.pathname);
 }
 
-/* ---------------------------
-   CLOSING EVENTS
---------------------------- */
+overlay.onclick = closePanel;
 
 document.addEventListener("click", (e) => {
   if (e.target.id === "closePanel") closePanel();
 });
 
-overlay.onclick = closePanel;
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closePanel();
-});
-
-/* ---------------------------
-   NEXT / PREV NAVIGATION
---------------------------- */
-
+/* ===============================
+   NEXT / PREV
+================================ */
 function navigateTo(direction, currentId) {
   const index = allCakes.findIndex((c) => c.id == currentId);
-  let newIndex = index;
+  if (index === -1) return;
 
-  if (direction === "next") {
-    newIndex = (index + 1) % allCakes.length;
-  } else if (direction === "prev") {
-    newIndex = (index - 1 + allCakes.length) % allCakes.length;
-  }
+  const newIndex = direction === "next" ? (index + 1) % allCakes.length : (index - 1 + allCakes.length) % allCakes.length;
 
   const newItem = allCakes[newIndex];
-
-  // ⭐ ADDED — Update URL when sliding
   history.replaceState(null, "", `?id=${newItem.id}`);
-
   openPanel(newItem);
 }
 
 document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("nextBtn")) {
-    navigateTo("next", e.target.dataset.id);
-  }
+  if (e.target.classList.contains("nextBtn")) navigateTo("next", e.target.dataset.id);
 
-  if (e.target.classList.contains("prevBtn")) {
-    navigateTo("prev", e.target.dataset.id);
-  }
+  if (e.target.classList.contains("prevBtn")) navigateTo("prev", e.target.dataset.id);
 });
 
-/* ---------------------------
-   AUTO-OPEN FROM URL
---------------------------- */
-
+/* ===============================
+   AUTO OPEN FROM URL
+================================ */
 function checkURLForAutoOpen() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
+  const id = new URLSearchParams(window.location.search).get("id");
   if (!id) return;
 
   const item = allCakes.find((c) => c.id == id);
-  if (!item) return;
-
-  // Delay needed so the layout renders first
-  setTimeout(() => openPanel(item), 150);
+  if (item) setTimeout(() => openPanel(item), 150);
 }
+
+/* ===============================
+   REACT TO LANGUAGE CHANGE
+================================ */
+window.addEventListener("languageChanged", () => {
+  renderCards(allCakes);
+
+  const id = new URLSearchParams(window.location.search).get("id");
+  if (id) {
+    const item = allCakes.find((c) => c.id == id);
+    if (item) openPanel(item);
+  }
+});

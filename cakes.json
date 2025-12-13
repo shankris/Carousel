@@ -1,452 +1,606 @@
 [
   {
     "id": 1,
-    "name": "Cheesecake",
+    "name": { "en": "Cheesecake", "hi": "चीज़केक" },
     "price": "1,100",
     "price2": "2,400",
     "images": ["public/Cheesecake.jpg", "public/Cheesecake_2.jpg"],
     "tags": [],
-    "smallDesc": "Indulge in pure bliss! Our classic cheesecake offers velvety smooth perfection and irresistible taste, ready to delight your senses.",
-    "description": "Experience the ultimate in creamy luxury with our exquisite classic cheesecake. Each slice promises a velvety smooth texture that melts in your mouth, perfectly balanced by a golden, buttery graham cracker crust. It's an elegant, irresistible treat designed to make any occasion feel extra special and leave a lasting impression of pure deliciousness.",
+    "smallDesc": {
+      "en": "Indulge in pure bliss! Our classic cheesecake offers velvety smooth perfection and irresistible taste, ready to delight your senses.",
+      "hi": "शुद्ध आनंद का मज़ा लें! हमारा क्लासिक चीज़केक मखमली मुलायम स्वाद और बेहतरीन मिठास के साथ आपकी इंद्रियों को खुश कर देता है।"
+    },
+    "description": {
+      "en": "Experience the ultimate in creamy luxury with our exquisite classic cheesecake. Each slice promises a velvety smooth texture that melts in your mouth, perfectly balanced by a golden, buttery graham cracker crust. It's an elegant, irresistible treat designed to make any occasion feel extra special and leave a lasting impression of pure deliciousness.",
+      "hi": "हमारे शानदार क्लासिक चीज़केक के साथ क्रीमी स्वाद का बेहतरीन अनुभव करें। हर स्लाइस मुँह में पिघलने वाली मुलायम बनावट और सुनहरी, बटरयुक्त क्रस्ट का परफेक्ट संतुलन देती है। यह एक खास, लाजवाब मिठाई है जो हर अवसर को यादगार बना देती है।"
+    },
     "rating": 4.7,
     "popularity": 92,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": true,
-    "deliveryTime": "Same-day delivery",
+    "deliveryTime": { "en": "Same-day delivery", "hi": "उसी दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "3 days"
+    "shelfLife": { "en": "3 days", "hi": "3 दिन" }
   },
   {
     "id": 2,
-    "name": "Chocolate Cheesecake",
+    "name": { "en": "Chocolate Cheesecake", "hi": "चॉकलेट चीज़केक" },
     "price": "1,400",
     "price2": "2,400",
     "images": ["public/ChocolateCheeseCake.jpg", "public/ChocolateCheeseCake_2.jpg"],
     "tags": [],
-    "smallDesc": "Decadent triple-chocolate dream! Layers of rich, creamy chocolate mousse and cake await.",
-    "description": "Unleash your inner chocoholic with our stunning layered chocolate cake. Featuring rich, velvety mousse atop a moist brownie-like base, each generous slice reveals a delightful blend of textures. This is the ultimate sophisticated treat, promising an unforgettable taste experience for any celebration or sweet craving.",
+    "smallDesc": {
+      "en": "Decadent triple-chocolate dream! Layers of rich, creamy chocolate mousse and cake await.",
+      "hi": "गाढ़े ट्रिपल-चॉकलेट का मज़ा! रिच और क्रीमी चॉकलेट मूस और केक की परतें आपका इंतज़ार कर रही हैं।"
+    },
+    "description": {
+      "en": "Unleash your inner chocoholic with our stunning layered chocolate cake. Featuring rich, velvety mousse atop a moist brownie-like base, each generous slice reveals a delightful blend of textures. This is the ultimate sophisticated treat, promising an unforgettable taste experience for any celebration or sweet craving.",
+      "hi": "हमारे लेयर्ड चॉकलेट केक के साथ अपने चॉकलेट प्रेम को और बढ़ाएँ। मुलायम, रिच चॉकलेट मूस और नरम ब्राउनी जैसी बेस के साथ हर स्लाइस बेहतरीन बनावट और लाजवाब स्वाद देती है। किसी भी उत्सव या मीठे craving के लिए यह एक यादगार ट्रीट है।"
+    },
     "rating": 4.5,
     "popularity": 78,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": false,
-    "deliveryTime": "Next-day delivery",
+    "deliveryTime": { "en": "Next-day delivery", "hi": "अगले दिन डिलीवरी" },
     "bestSeller": true,
-    "shelfLife": "15 days"
+    "shelfLife": { "en": "15 days", "hi": "15 दिन" }
   },
   {
     "id": 3,
-    "name": "Blueberry Cheesecake",
+    "name": { "en": "Blueberry Cheesecake", "hi": "ब्लूबेरी चीज़केक" },
     "price": "1,500",
     "price2": "2,600",
     "images": ["public/03_BlueberryCheeseCake.jpg", "public/03_BlueberryCheeseCake_2.jpg", "public/03_BlueberryCheeseCake_3.jpg", "public/03_BlueberryCheeseCake_5.jpg"],
     "tags": [],
-    "smallDesc": "Luscious blueberry cheesecake! Creamy, dreamy, and topped with vibrant fruit compote – a perfect, irresistible indulgence.",
-    "description": "Savor the exquisite taste of our classic blueberry cheesecake, a masterpiece of creamy perfection. A generous layer of tangy-sweet blueberry compote, brimming with whole fruit, crowns a rich, velvety cheesecake base and a crisp graham cracker crust. It's an elegant, refreshing dessert, ideal for captivating your guests and satisfying every sweet craving.",
+    "smallDesc": {
+      "en": "Luscious blueberry cheesecake! Creamy, dreamy, and topped with vibrant fruit compote – a perfect, irresistible indulgence.",
+      "hi": "शानदार ब्लूबेरी चीज़केक! क्रीमी, मुलायम और फ्रूटी कंपोट के साथ—एक बेहतरीन और लाजवाब मिठास।"
+    },
+    "description": {
+      "en": "Savor the exquisite taste of our classic blueberry cheesecake, a masterpiece of creamy perfection. A generous layer of tangy-sweet blueberry compote, brimming with whole fruit, crowns a rich, velvety cheesecake base and a crisp graham cracker crust. It's an elegant, refreshing dessert, ideal for captivating your guests and satisfying every sweet craving.",
+      "hi": "हमारे क्लासिक ब्लूबेरी चीज़केक का बेहतरीन और क्रीमी स्वाद अनुभव करें। ऊपर डली खट्टी-मीठी ब्लूबेरी कंपोट की परत और नीचे मुलायम चीज़केक—हर बाइट को परफेक्ट बनाते हैं। यह एक ताज़ा, एलिगेंट और भीड़ को खुश कर देने वाला डेज़र्ट है।"
+    },
     "rating": 4.8,
     "popularity": 88,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": true,
-    "deliveryTime": "Same-day delivery",
+    "deliveryTime": { "en": "Same-day delivery", "hi": "उसी दिन डिलीवरी" },
     "bestSeller": true,
-    "shelfLife": "3 days"
+    "shelfLife": { "en": "3 days", "hi": "3 दिन" }
   },
   {
     "id": 4,
-    "name": "Sponge Cake",
+    "name": { "en": "Sponge Cake", "hi": "स्पंज केक" },
     "price": "750",
     "price2": "1,200",
     "images": ["public/SpongeCake_1.jpg", "public/SpongeCake_2.jpg", "public/SpongeCake_3.jpg"],
     "tags": [],
-    "smallDesc": "A perfectly baked, golden, heart-shaped sponge cake, tender, delicious, and ready to enjoy now.",
-    "description": "This beautifully baked, buttery sponge cake is molded into a classic heart shape, offering a rich golden crust and a tender, light crumb, perfect for gifting.",
+    "smallDesc": {
+      "en": "A perfectly baked, golden, heart-shaped sponge cake, tender, delicious, and ready to enjoy now.",
+      "hi": "परफेक्ट बेक किया हुआ सुनहरा, दिल के आकार का स्पंज केक—नरम, स्वादिष्ट और तुरंत खाने के लिए तैयार।"
+    },
+    "description": {
+      "en": "This beautifully baked, buttery sponge cake is molded into a classic heart shape, offering a rich golden crust and a tender, light crumb, perfect for gifting.",
+      "hi": "यह खूबसूरती से बेक किया हुआ बटरयुक्त स्पंज केक दिल के आकार में बना है। इसकी सुनहरी क्रस्ट और हल्की, नरम बनावट इसे गिफ्टिंग के लिए एक बेहतरीन विकल्प बनाती है।"
+    },
     "rating": 4.4,
     "popularity": 65,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": false,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "12 days"
+    "shelfLife": { "en": "12 days", "hi": "12 दिन" }
   },
   {
     "id": 5,
-    "name": "Marble Cake",
+    "name": { "en": "Marble Cake", "hi": "मार्बल केक" },
     "price": "700",
     "price2": "1,350",
     "images": ["public/MarbleCake_1.jpg", "public/MarbleCake_2.jpg", "public/MarbleCake_3.jpg"],
     "tags": [],
-    "smallDesc": "Beautifully marbled perfection! Enjoy our classic, moist marble cake, a delightful swirl of vanilla and chocolate in every bite.",
-    "description": "Discover the captivating charm of our artisanal marble cake, where rich chocolate and delicate vanilla batters elegantly intertwine. Each moist, tender slice offers a beautiful swirl and a harmonious blend of flavors. It’s a timeless, comforting treat, perfect for everyday enjoyment or bringing a touch of homemade warmth to any gathering.",
+    "smallDesc": {
+      "en": "Beautifully marbled perfection! Enjoy our classic, moist marble cake, a delightful swirl of vanilla and chocolate in every bite.",
+      "hi": "खूबसूरत मार्बल पैटर्न वाला क्लासिक और नरम केक! हर बाइट में वनीला और चॉकलेट का शानदार मिश्रण।"
+    },
+    "description": {
+      "en": "Discover the captivating charm of our artisanal marble cake, where rich chocolate and delicate vanilla batters elegantly intertwine. Each moist, tender slice offers a beautiful swirl and a harmonious blend of flavors. It’s a timeless, comforting treat, perfect for everyday enjoyment or bringing a touch of homemade warmth to any gathering.",
+      "hi": "हमारे आर्टिसनल मार्बल केक का आकर्षक स्वाद अनुभव करें, जिसमें चॉकलेट और वनीला खूबसूरती से मिलते हैं। हर स्लाइस मुलायम, नम और स्वाद से भरपूर होती है। यह रोजमर्रा या किसी भी खास मौके के लिए एक परफेक्ट मिठाई है।"
+    },
     "rating": 4.6,
     "popularity": 84,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": false,
-    "deliveryTime": "Next-day delivery",
+    "deliveryTime": { "en": "Next-day delivery", "hi": "अगले दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "7 days"
+    "shelfLife": { "en": "7 days", "hi": "7 दिन" }
   },
   {
     "id": 6,
-    "name": "Eggless Marble Cake",
+    "name": { "en": "Eggless Marble Cake", "hi": "एगलेस मार्बल केक" },
     "price": "680",
     "price2": "1,320",
     "images": ["public/EgglessMarbleCake_1.jpg", "public/EgglessMarbleCake_2.jpg", "public/EgglessMarbleCake_3.jpg"],
     "tags": ["Eggless"],
-    "smallDesc": "Love in every slice! Our exquisite eggless marble cake, a delightful swirl of flavor, perfect for any celebration.",
-    "description": "Show your heartfelt affection with our charming eggless marble cake. Each tender, moist slice features beautiful swirls of vanilla and chocolate, promising a rich flavor experience without eggs. It’s the perfect thoughtful treat for anniversaries, Valentine's, or simply to share a sweet, inclusive moment.",
+    "smallDesc": {
+      "en": "Love in every slice! Our exquisite eggless marble cake, a delightful swirl of flavor, perfect for any celebration.",
+      "hi": "हर स्लाइस में प्यार! हमारा बेहतरीन एगलेस मार्बल केक, स्वाद के सुंदर घुमाव के साथ—हर मौके के लिए परफेक्ट।"
+    },
+    "description": {
+      "en": "Show your heartfelt affection with our charming eggless marble cake. Each tender, moist slice features beautiful swirls of vanilla and chocolate, promising a rich flavor experience without eggs. It’s the perfect thoughtful treat for anniversaries, Valentine's, or simply to share a sweet, inclusive moment.",
+      "hi": "हमारा एगलेस मार्बल केक आपके प्यार को खूबसूरती से व्यक्त करता है। हर नरम, नम स्लाइस में वनीला और चॉकलेट का शानदार घुमाव है—बिना अंडे के बेहतरीन स्वाद। यह सालगिरह, वेलेंटाइन या किसी मीठे पल को खास बनाने के लिए परफेक्ट है।"
+    },
     "rating": 4.7,
     "popularity": 82,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": false,
-    "deliveryTime": "Next-day delivery",
+    "deliveryTime": { "en": "Next-day delivery", "hi": "अगले दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "7 days"
+    "shelfLife": { "en": "7 days", "hi": "7 दिन" }
   },
   {
     "id": 7,
-    "name": "Banana Chocolate Cake",
+    "name": { "en": "Banana Chocolate Cake", "hi": "बनाना चॉकलेट केक" },
     "price": "640",
     "price2": "1,200",
     "images": ["public/BananaChocolateCake_1.jpg", "public/BananaChocolateCake_2.jpg"],
     "tags": [],
-    "smallDesc": "Irresistible banana chocolate chip cake! Moist, flavorful, and packed with melty chocolate – a comforting classic everyone loves.",
-    "description": "Savor the delightful fusion of flavors with our homemade banana chocolate chip cake. This incredibly moist and tender cake is baked to golden perfection, generously studded with rich, gooey chocolate chips throughout. It's the ultimate comfort dessert, perfect for a cozy treat, a family gathering, or a delightful gift that truly tastes like home.",
+    "smallDesc": {
+      "en": "Irresistible banana chocolate chip cake! Moist, flavorful, and packed with melty chocolate – a comforting classic everyone loves.",
+      "hi": "लज़ीज़ बनाना चॉकलेट चिप केक! नरम, स्वादिष्ट और पिघलती चॉकलेट से भरपूर—सबका पसंदीदा क्लासिक।"
+    },
+    "description": {
+      "en": "Savor the delightful fusion of flavors with our homemade banana chocolate chip cake. This incredibly moist and tender cake is baked to golden perfection, generously studded with rich, gooey chocolate chips throughout. It's the ultimate comfort dessert, perfect for a cozy treat, a family gathering, or a delightful gift that truly tastes like home.",
+      "hi": "हमारे घर-स्टाइल बनाना चॉकलेट चिप केक के शानदार स्वाद का आनंद लें। बेहद नरम, नम और चॉकलेट चिप्स से भरपूर यह केक हर बाइट को खास बनाता है। घर जैसा सुकून देने वाला यह मीठा, परिवार और दोस्तों के साथ किसी भी मौके पर परफेक्ट है।"
+    },
     "rating": 4.6,
     "popularity": 75,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": true,
-    "deliveryTime": "Same-day delivery",
+    "deliveryTime": { "en": "Same-day delivery", "hi": "उसी दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "1 day"
+    "shelfLife": { "en": "1 day", "hi": "1 दिन" }
   },
   {
     "id": 8,
-    "name": "Oats Cake",
+    "name": { "en": "Oats Cake", "hi": "ओट्स केक" },
     "price": "720",
     "price2": "1,360",
     "images": ["public/OatsCake_1.jpg", "public/OatsCake_2.jpg", "public/OatsCake_3.jpg"],
     "tags": [],
-    "smallDesc": "Hearty and wholesome oats cake! Perfectly moist, subtly sweet, and topped with crunchy peanuts for delightful texture.",
-    "description": "Discover a delicious twist on comfort with our wholesome oats cake. Baked to golden perfection, this moist and flavorful loaf offers a satisfying texture, subtly sweetened and generously studded with crunchy peanuts for an extra layer of delight. It's the perfect guilt-free indulgence for breakfast, a coffee break, or a naturally delicious anytime treat.",
+    "smallDesc": {
+      "en": "Hearty and wholesome oats cake! Perfectly moist, subtly sweet, and topped with crunchy peanuts for delightful texture.",
+      "hi": "पौष्टिक और स्वादिष्ट ओट्स केक! नरम, हल्का मीठा और ऊपर क्रंची पीनट्स के साथ बेहतरीन टेक्सचर।"
+    },
+    "description": {
+      "en": "Discover a delicious twist on comfort with our wholesome oats cake. Baked to golden perfection, this moist and flavorful loaf offers a satisfying texture, subtly sweetened and generously studded with crunchy peanuts for an extra layer of delight. It's the perfect guilt-free indulgence for breakfast, a coffee break, or a naturally delicious anytime treat.",
+      "hi": "हमारे हेल्दी और टेस्टी ओट्स केक का मज़ा लें। सुनहरा बेक किया हुआ यह नरम और स्वाद से भरपूर केक हल्की मिठास और क्रंची पीनट्स के साथ हर बाइट को खास बनाता है। नाश्ते, चाय या किसी भी समय खाने के लिए एक बेहतरीन और guilt-free ट्रीट।"
+    },
     "rating": 4.9,
     "popularity": 95,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": true,
-    "deliveryTime": "Next-day delivery",
+    "deliveryTime": { "en": "Next-day delivery", "hi": "अगले दिन डिलीवरी" },
     "bestSeller": true,
-    "shelfLife": "2 days"
+    "shelfLife": { "en": "2 days", "hi": "2 दिन" }
   },
   {
     "id": 9,
-    "name": "Blueberry Cake",
+    "name": { "en": "Blueberry Cake", "hi": "ब्लूबेरी केक" },
     "price": "850",
     "price2": "1,700",
     "images": ["public/BlueberyCake_1.jpg", "public/BlueberyCake_2.jpg", "public/BlueberyCake_3.jpg"],
     "tags": [],
-    "smallDesc": "A luxurious individual treat. This moist, fruit-packed mini loaf elevates any celebratory spread.",
-    "description": "Elevate any gathering with these artisan mini blueberry loaves. Their moist crumb and vibrant fruit make them a luxurious, convenient treat for guests at any special event.",
+    "smallDesc": {
+      "en": "A luxurious individual treat. This moist, fruit-packed mini loaf elevates any celebratory spread.",
+      "hi": "एक शानदार मिनी लज़ीज़ केक! नरम, फ्रूट-फिल्ड और हर सेलिब्रेशन के लिए परफेक्ट।"
+    },
+    "description": {
+      "en": "Elevate any gathering with these artisan mini blueberry loaves. Their moist crumb and vibrant fruit make them a luxurious, convenient treat for guests at any special event.",
+      "hi": "इन आर्टिसन ब्लूबेरी मिनी केक के साथ किसी भी गेट-टुगेदर को खास बनाएं। नरम और फ्रूटी टेक्सचर वाले ये छोटे केक मेहमानों के लिए एक शानदार ट्रीट हैं।"
+    },
     "rating": 4.8,
     "popularity": 89,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": false,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": true,
-    "shelfLife": "3 days"
+    "shelfLife": { "en": "3 days", "hi": "3 दिन" }
   },
   {
     "id": 10,
-    "name": "Ragi Cake",
+    "name": { "en": "Ragi Cake", "hi": "रागी केक" },
     "price": "680",
     "price2": "1,190",
     "images": ["public/RagiCake_1.jpg", "public/RagiCake_2.jpg"],
     "tags": ["Eggless"],
-    "smallDesc": "Wholesome Ragi cake! Moist, rich, and packed with banana and crunchy walnuts – a naturally delicious, healthy treat.",
-    "description": "Discover a guilt-free indulgence with our wholesome Ragi cake, a delightful blend of rich flavors and natural goodness. This incredibly moist and satisfying cake combines the earthy notes of Ragi with sweet banana and crunchy walnuts. It's the perfect healthy-ish treat for any time of day, offering deliciousness without compromise for health-conscious dessert lovers.",
+    "smallDesc": {
+      "en": "Wholesome Ragi cake! Moist, rich, and packed with banana and crunchy walnuts – a naturally delicious, healthy treat.",
+      "hi": "हेल्दी और स्वादिष्ट रागी केक! नरम, रिच और केले व कुरकुरे बादाम के साथ भरपूर।"
+    },
+    "description": {
+      "en": "Discover a guilt-free indulgence with our wholesome Ragi cake, a delightful blend of rich flavors and natural goodness. This incredibly moist and satisfying cake combines the earthy notes of Ragi with sweet banana and crunchy walnuts. It's the perfect healthy-ish treat for any time of day, offering deliciousness without compromise for health-conscious dessert lovers.",
+      "hi": "हमारा पौष्टिक और स्वादिष्ट रागी केक एक guilt-free आनंद है। रागी का हल्का मिट्टी-सा स्वाद, केले की मिठास और कुरकुरे बादाम हर बाइट को खास बनाते हैं। सेहत का ध्यान रखते हुए मीठा खाने वालों के लिए यह एक परफेक्ट विकल्प है।"
+    },
     "rating": 4.3,
     "popularity": 70,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": true,
-    "deliveryTime": "Next-day delivery",
+    "deliveryTime": { "en": "Next-day delivery", "hi": "अगले दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "20 days"
+    "shelfLife": { "en": "20 days", "hi": "20 दिन" }
   },
   {
     "id": 11,
-    "name": "Dry Fruit Cake",
+    "name": { "en": "Dry Fruit Cake", "hi": "ड्राई फ्रूट केक" },
     "price": "740",
     "price2": "1,480",
     "images": ["public/DryFruitCake_1.jpg", "public/DryFruitCake_2.jpg", "public/DryFruitCake_3.jpg", "public/DryFruitCake_4.jpg"],
     "tags": ["Eggless"],
-    "smallDesc": "Rich, moist eggless dry fruit cake! Bursting with nuts and dried fruits, a delightful treat for every occasion.",
-    "description": "Indulge in the heartwarming taste of our exquisite eggless dry fruit cake, a festive favorite perfect for any celebration. Each wonderfully moist slice is generously packed with a medley of premium dried fruits and crunchy nuts, offering a delightful texture and burst of flavor in every bite. It's a truly special, inclusive treat designed to bring joy and deliciousness to everyone.",
+    "smallDesc": {
+      "en": "Rich, moist eggless dry fruit cake! Bursting with nuts and dried fruits, a delightful treat for every occasion.",
+      "hi": "रिच और नरम एगलेस ड्राई फ्रूट केक! मेवों और सूखे फलों से भरपूर—हर मौके के लिए परफेक्ट ट्रीट।"
+    },
+    "description": {
+      "en": "Indulge in the heartwarming taste of our exquisite eggless dry fruit cake, a festive favorite perfect for any celebration. Each wonderfully moist slice is generously packed with a medley of premium dried fruits and crunchy nuts, offering a delightful texture and burst of flavor in every bite. It's a truly special, inclusive treat designed to bring joy and deliciousness to everyone.",
+      "hi": "हमारे शानदार एगलेस ड्राई फ्रूट केक का दिल को छू लेने वाला स्वाद लें। हर नरम स्लाइस में बेहतरीन सूखे फलों और कुरकुरे मेवों की भरमार है, जो हर बाइट को खास बनाता है। त्योहारों और खास मौकों के लिए यह एक शानदार और सबको पसंद आने वाली ट्रीट है।"
+    },
     "rating": 4.5,
     "popularity": 80,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
     "specialThisWeek": false,
-    "deliveryTime": "Same-day delivery",
+    "deliveryTime": { "en": "Same-day delivery", "hi": "उसी दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "4 days"
+    "shelfLife": { "en": "4 days", "hi": "4 दिन" }
   },
   {
     "id": 12,
-    "name": "Chocolate Brownie",
+    "name": { "en": "Chocolate Brownie", "hi": "चॉकलेट ब्राउनी" },
     "price": "600",
     "price2": "1,200",
     "images": ["public/ChocolateBrownie_1.jpg", "public/ChocolateBrownie_2.jpg"],
     "tags": [],
-    "smallDesc": "This rich, fudgy square is the ultimate luxurious centerpiece for any celebration dessert table.",
-    "description": "Indulge your guests with this intensely rich, square brownie. Its dense, fudgy core and crisp edge make it a sophisticated, unforgettable highlight at any special event or party.",
+    "smallDesc": {
+      "en": "This rich, fudgy square is the ultimate luxurious centerpiece for any celebration dessert table.",
+      "hi": "रिच और फज्डी यह स्क्वेयर ब्राउनी किसी भी सेलिब्रेशन की डेज़र्ट टेबल की शान है।"
+    },
+    "description": {
+      "en": "Indulge your guests with this intensely rich, square brownie. Its dense, fudgy core and crisp edge make it a sophisticated, unforgettable highlight at any special event or party.",
+      "hi": "अपने मेहमानों को इस रिच और गाढ़ी ब्राउनी से खुश करें। इसका नरम फज्डी केंद्र और हल्का कुरकुरा किनारा इसे किसी भी पार्टी का यादगार प्रीमियम डेज़र्ट बनाता है।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Brownie",
+    "category": { "en": "Brownie", "hi": "ब्राउनी" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": true,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 13,
-    "name": "Eggless Chocolate Brownie",
+    "name": { "en": "Eggless Chocolate Brownie", "hi": "एगलेस चॉकलेट ब्राउनी" },
     "price": "700",
     "price2": "1,300",
     "images": ["public/13_ChocolateBrownieEggless.jpg", "public/13_ChocolateBrownieEggless_2.jpg", "public/13_ChocolateBrownieEggless_3.jpg"],
     "tags": ["Eggless"],
-    "smallDesc": "Decadent eggless brownie! Rich, fudgy, and packed with chocolatey goodness—pure indulgence for everyone to enjoy.",
-    "description": "Satisfy your deepest chocolate cravings with our unbelievably fudgy eggless brownie. This moist, rich treat is generously loaded with chunks of premium chocolate, delivering an intense flavor experience in every bite. It's the perfect inclusive dessert, offering pure, unadulterated brownie bliss for any occasion, proving deliciousness knows no bounds.",
+    "smallDesc": {
+      "en": "Decadent eggless brownie! Rich, fudgy, and packed with chocolatey goodness—pure indulgence for everyone to enjoy.",
+      "hi": "लाजवाब एगलेस ब्राउनी! रिच, फज्डी और चॉकलेट की भरमार—सबके लिए परफेक्ट मिठास।"
+    },
+    "description": {
+      "en": "Satisfy your deepest chocolate cravings with our unbelievably fudgy eggless brownie. This moist, rich treat is generously loaded with chunks of premium chocolate, delivering an intense flavor experience in every bite. It's the perfect inclusive dessert, offering pure, unadulterated brownie bliss for any occasion, proving deliciousness knows no bounds.",
+      "hi": "हमारी फज्डी एगलेस ब्राउनी आपकी हर चॉकलेट क्रेविंग पूरी करती है। इसमें प्रीमियम चॉकलेट के बड़े-बड़े टुकड़े हैं जो हर बाइट को रिच और खास बनाते हैं। हर मौके के लिए यह एक बेहतरीन डेज़र्ट है जिसे हर कोई पसंद करेगा।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Brownie",
+    "category": { "en": "Brownie", "hi": "ब्राउनी" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": true,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 14,
-    "name": "Walnut Brownie",
+    "name": { "en": "Walnut Brownie", "hi": "वॉलनट ब्राउनी" },
     "price": "720",
     "price2": "1,400",
     "images": ["public/WalnutBrownie_1.jpg", "public/WalnutBrownie_2.jpg", "public/WalnutBrownie_3.jpg"],
     "tags": [],
-    "smallDesc": "Irresistible walnut brownie! Rich, fudgy chocolate goodness crowned with crunchy walnuts – a classic, satisfying treat.",
-    "description": "Indulge in the perfect balance of rich, fudgy chocolate and satisfying crunch with our delectable walnut brownie. Each moist, dense square is generously studded with premium walnuts, adding a delightful texture and nutty flavor that perfectly complements the deep cocoa. It's an iconic dessert, ideal for sharing or savoring a moment of pure, classic brownie bliss.",
+    "smallDesc": {
+      "en": "Irresistible walnut brownie! Rich, fudgy chocolate goodness crowned with crunchy walnuts – a classic, satisfying treat.",
+      "hi": "लाजवाब वॉलनट ब्राउनी! रिच चॉकलेट और कुरकुरे अखरोट का बेहतरीन मेल।"
+    },
+    "description": {
+      "en": "Indulge in the perfect balance of rich, fudgy chocolate and satisfying crunch with our delectable walnut brownie. Each moist, dense square is generously studded with premium walnuts, adding a delightful texture and nutty flavor that perfectly complements the deep cocoa. It's an iconic dessert, ideal for sharing or savoring a moment of pure, classic brownie bliss.",
+      "hi": "हमारी वॉलनट ब्राउनी रिच फज्डी चॉकलेट और कुरकुरे अखरोट का परफेक्ट कॉम्बिनेशन है। हर बाइट में गाढ़ा कोको स्वाद और मेवों की शानदार क्रंच इसे एक क्लासिक और यादगार डेज़र्ट बनाती है।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Brownie",
+    "category": { "en": "Brownie", "hi": "ब्राउनी" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 15,
-    "name": "Almond Brownie",
+    "name": { "en": "Almond Brownie", "hi": "आल्मंड ब्राउनी" },
     "price": "720",
     "price2": "1,400",
     "images": ["public/AlmondBrownie_1.jpg", "public/AlmondBrownie_2.jpg"],
     "tags": [],
-    "smallDesc": "A fudgy, dark chocolate brownie crowned with toasted almonds, perfect for upscale event dessert displays.",
-    "description": "Treat your guests to this rich, dense, square brownie. The deep chocolate flavor is perfectly complemented by a generous topping of crunchy almond flakes for a memorable party dessert.",
+    "smallDesc": {
+      "en": "A fudgy, dark chocolate brownie crowned with toasted almonds, perfect for upscale event dessert displays.",
+      "hi": "रिच डार्क चॉकलेट ब्राउनी, ऊपर से टोस्टेड बादाम—किसी भी खास इवेंट के लिए परफेक्ट।"
+    },
+    "description": {
+      "en": "Treat your guests to this rich, dense, square brownie. The deep chocolate flavor is perfectly complemented by a generous topping of crunchy almond flakes for a memorable party dessert.",
+      "hi": "यह रिच और गाढ़ी ब्राउनी आपके मेहमानों को जरूर पसंद आएगी। गहरे चॉकलेट स्वाद के साथ ऊपर कुरकुरे बादाम की लेयर इसे एक प्रीमियम और खास पार्टी डेज़र्ट बनाती है।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Brownie",
+    "category": { "en": "Brownie", "hi": "ब्राउनी" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 16,
-    "name": "Almond Honney Tea Cake",
-    "price": "720",
-    "price2": "1,400",
-    "images": ["public/15_AlmondHonneyTeaCake.jpg", "public/15_AlmondHonneyTeaCake_2.jpg", "public/15_AlmondHonneyTeaCake_3.jpg"],
+    "name": { "en": "Choco Chip Cookies", "hi": "चोको चिप कुकीज़" },
+    "price": "700",
+    "price2": "1,380",
+    "images": ["public/ChocolateChipCookies_1.jpg", "public/ChocolateChipCookie_2.jpg"],
     "tags": [],
-    "smallDesc": "Celebrate with our Almond Honey Tea Cake! Moist, delicately sweet, and topped with crunchy almonds – pure birthday delight.",
-    "description": "Elevate any celebration with our exquisite Almond Honey Tea Cake, a truly delightful and naturally sweet treat. This beautifully moist cake is infused with subtle honey notes and generously crowned with toasted almond slivers for an irresistible crunch. It's the perfect elegant choice for birthdays, afternoon tea, or simply to add a touch of sophisticated sweetness to your day.",
+    "smallDesc": {
+      "en": "Classic chocolate chip cookies with rich flavor and a perfect chewy-crispy texture—ideal for any celebration.",
+      "hi": "क्लासिक चोको चिप कुकीज़—रिच स्वाद और परफेक्ट च्यूई-क्रिस्पी टेक्सचर के साथ, हर मौके के लिए बेहतरीन।"
+    },
+    "description": {
+      "en": "These indulgent chocolate chip cookies are baked to golden perfection, combining a soft, chewy center with a lightly crisp edge. Loaded with premium chocolate chips, each cookie delivers a rich, satisfying bite that makes it an irresistible crowd-pleaser for parties and celebrations.",
+      "hi": "ये शानदार चोको चिप कुकीज़ सुनहरा बेक की जाती हैं, जिनमें नरम च्यूई सेंटर और हल्का कुरकुरा किनारा है। प्रीमियम चॉकलेट चिप्स से भरी ये कुकीज़ हर पार्टी और सेलिब्रेशन के लिए एकदम परफेक्ट हैं।"
+    },
     "rating": 4.6,
-    "popularity": 73,
+    "popularity": 85,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
-    "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "category": { "en": "Cookies", "hi": "कुकीज़" },
+    "specialThisWeek": false,
+    "deliveryTime": { "en": "Same-day delivery", "hi": "उसी दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "15 days", "hi": "15 दिन" }
   },
+
   {
     "id": 17,
-    "name": "Chocolate Dry Fruit Cake",
-    "price": "740",
-    "price2": "1,480",
-    "images": ["public/ChocolateDryFruitCake_1.jpg", "public/ChocolateDryFruitCake_2.jpg", "public/ChocolateDryFruitCake_3.jpg", "public/ChocolateDryFruitCake_4.jpg"],
+    "name": { "en": "Wheat Jaggery Cookies", "hi": "गेहूं गुड़ कुकीज़" },
+    "price": "700",
+    "price2": "1,380",
+    "images": ["public/WheatJaggeryCookies_1.jpg", "public/WheatJaggeryCookies_2.jpg"],
     "tags": [],
-    "smallDesc": "Rich chocolate, crunchy almond flakes, and chips make this sliceable loaf a truly decadent party centerpiece.",
-    "description": "This dense, flavorful chocolate dry fruit cake is generously studded with sliced almonds and chocolate chips, making it the ideal elegant dessert for any special occasion.",
-    "rating": 4.6,
-    "popularity": 73,
+    "smallDesc": {
+      "en": "Healthy, flavorful whole wheat cookies sweetened with jaggery—perfect for guilt-free snacking.",
+      "hi": "हेल्दी और स्वादिष्ट गेहूं की कुकीज़, गुड़ की हल्की मिठास के साथ—गिल्ट-फ्री स्नैकिंग के लिए परफेक्ट।"
+    },
+    "description": {
+      "en": "Enjoy a wholesome treat with our wheat jaggery cookies, made using nutrient-rich whole wheat flour and naturally sweetened with pure jaggery. Each bite offers a warm, earthy flavor and a satisfying crunch, making them a healthier and tastier alternative to regular cookies.",
+      "hi": "हमारी गेहूं गुड़ कुकीज़ एक पौष्टिक और स्वादिष्ट स्नैक हैं, जिन्हें साबुत गेहूं के आटे और शुद्ध गुड़ से बनाया गया है। हर बाइट में हल्का मिट्टी जैसा स्वाद और शानदार क्रंच है, जो इन्हें सामान्य कुकीज़ से कहीं बेहतर बनाता है।"
+    },
+    "rating": 4.7,
+    "popularity": 79,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Cookies", "hi": "कुकीज़" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "Same-day delivery", "hi": "उसी दिन डिलीवरी" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "15 days", "hi": "15 दिन" }
   },
+
   {
     "id": 18,
-    "name": "Almond Cookies",
-    "price": "740",
-    "price2": "1,480",
-    "images": ["public/AlmondCookies_1.jpg", "public/AlmondCookies_2.jpg", "public/AlmondCookies_3.jpg", "public/AlmondCookies_4.jpg"],
+    "name": { "en": "Coconut Wheat Cookies", "hi": "कोकोनट व्हीट कुकीज़" },
+    "price": "700",
+    "price2": "1,380",
+    "images": ["public/CoconutWheatCookies_1.jpg"],
     "tags": [],
-    "smallDesc": "These luxurious almond cookies are the ultimate elegant treat for any special event or favor box.",
-    "description": "Elevate your dessert table instantly with these delicate, buttery shortbread cookies. Topped with crunchy almond flakes, they are a premium and unforgettable party delight.",
-    "rating": 4.6,
-    "popularity": 73,
+    "smallDesc": {
+      "en": "Delightfully crisp wheat cookies enriched with coconut for a flavorful, wholesome crunch.",
+      "hi": "नारियल से भरपूर कुरकुरी गेहूं कुकीज़—स्वाद और पौष्टिकता का बेहतरीन मेल।"
+    },
+    "description": {
+      "en": "A wholesome twist on a classic treat, our coconut wheat cookies combine the goodness of whole wheat with the naturally sweet aroma of premium coconut. Crisp, golden, and delightfully addictive, these cookies make a perfect anytime snack for the family.",
+      "hi": "हमारी कोकोनट व्हीट कुकीज़ गेहूं की पौष्टिकता और नारियल की प्राकृतिक मिठास का शानदार संयोजन हैं। सुनहरी, कुरकुरी और बेहद स्वादिष्ट, ये कुकीज़ परिवार के लिए हर समय की परफेक्ट स्नैक हैं।"
+    },
+    "rating": 4.5,
+    "popularity": 72,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
-    "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "category": { "en": "Cookies", "hi": "कुकीज़" },
+    "specialThisWeek": false,
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "20 days", "hi": "20 दिन" }
   },
+
   {
     "id": 19,
-    "name": "Jeera Cookies",
-    "price": "740",
-    "price2": "1,480",
-    "images": ["public/JeeraCookies_1.jpg", "public/JeeraCookies_2.jpg"],
+    "name": { "en": "Coconut Rusk", "hi": "कोकोनट रस्क" },
+    "price": "500",
+    "price2": "980",
+    "images": ["public/CoconutRusk_1.jpg", "public/CoconutRusk_2.jpg", "public/CoconutRusk_3.jpg"],
     "tags": [],
-    "smallDesc": "Savory, crisp Jeera cookies—the perfect, authentic accompaniment to an elegant Hi-tea gathering.",
-    "description": "These uniquely flavored, buttery Jeera cookies offer a delightful savory crunch. They are the ideal, premium treat to share at any luxurious Hi-tea party or special occasion.",
-    "rating": 4.6,
-    "popularity": 73,
+    "smallDesc": {
+      "en": "A flavorful, crunchy coconut rusk perfect for pairing with tea or coffee.",
+      "hi": "स्वादिष्ट और कुरकुरा कोकोनट रस्क—चाय या कॉफ़ी के साथ परफेक्ट।"
+    },
+    "description": {
+      "en": "These golden, crisp coconut rusks offer a delightful blend of sweetness and crunch. Made with premium coconut, they make an excellent accompaniment to warm beverages or a light snack on their own.",
+      "hi": "ये सुनहरे और कुरकुरे कोकोनट रस्क मिठास और क्रंच का बेहतरीन मेल हैं। प्रीमियम नारियल से बने ये रस्क चाय-कॉफ़ी के साथ या हल्के स्नैक के रूप में परफेक्ट हैं।"
+    },
+    "rating": 4.4,
+    "popularity": 69,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
-    "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "category": { "en": "Rusk", "hi": "रस्क" },
+    "specialThisWeek": false,
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "25 days", "hi": "25 दिन" }
   },
+
   {
     "id": 20,
-    "name": "Coconut Cookies",
+    "name": { "en": "Coconut Cookies", "hi": "कोकोनट कुकीज़" },
     "price": "740",
     "price2": "1,480",
     "images": ["public/CoconutCookies_1.jpg", "public/CoconutCookies_2.jpg", "public/CoconutCookies_3.jpg"],
     "tags": [],
-    "smallDesc": "Light, buttery coconut cookies offer a delightful chewy texture, making them perfect for any premium party platter.",
-    "description": "Treat your guests to these uniquely textured coconut cookies. Their toasted golden exterior and sweet, moist interior provide a luxurious, exotic flavor—ideal for sophisticated events.",
+    "smallDesc": {
+      "en": "Light, buttery coconut cookies with a delightful chewy texture—perfect for premium party platters.",
+      "hi": "हल्की, बटररी कोकोनट कुकीज़, शानदार च्यूई टेक्सचर के साथ—प्रीमियम पार्टी प्लेटर्स के लिए परफेक्ट।"
+    },
+    "description": {
+      "en": "Treat your guests to these uniquely textured coconut cookies. Their toasted golden exterior and sweet, moist interior offer a luxurious, exotic flavor, making them perfect for upscale events and celebrations.",
+      "hi": "इन अनोखी टेक्सचर वाली कोकोनट कुकीज़ से अपने मेहमानों को खास ट्रीट दें। टोस्टेड सुनहरा बाहरी हिस्सा और नरम मीठा अंदरूनी स्वाद इन्हें किसी भी प्रीमियम इवेंट के लिए परफेक्ट बनाता है।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Cookies", "hi": "कुकीज़" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 21,
-    "name": "Kaju Cookies",
+    "name": { "en": "Kaju Cookies", "hi": "काजू कुकीज़" },
     "price": "740",
     "price2": "1,480",
     "images": ["public/KajuCookies_1.jpg", "public/KajuCookies_2.jpg", "public/KajuCookies_3.jpg"],
     "tags": [],
-    "smallDesc": "Rich, buttery cookies crowned with a whole cashew—the perfect premium treat for any special occasion.",
-    "description": "These exquisite, round cashew cookies offer a melt-in-your-mouth texture and rich flavor. Topped with a perfect cashew half, they are ideal for elegant gifting or Hi-tea platters.",
+    "smallDesc": {
+      "en": "Rich, buttery cookies crowned with a whole cashew—the perfect premium treat for any special occasion.",
+      "hi": "समृद्ध, बटररी कुकीज़ पर पूरे काजू के साथ—किसी भी खास अवसर के लिए परफेक्ट प्रीमियम ट्रीट।"
+    },
+    "description": {
+      "en": "These exquisite, round cashew cookies offer a melt-in-your-mouth texture and rich flavor. Topped with a perfect cashew half, they are ideal for elegant gifting or Hi-tea platters.",
+      "hi": "ये शानदार, गोल काजू कुकीज़ माउथ-मैलब टेक्सचर और समृद्ध स्वाद देती हैं। पूरी काजू के आधे हिस्से से सजाई गई, ये एलीगेंट गिफ्टिंग या हाई-टी प्लेटर्स के लिए परफेक्ट हैं।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक्स" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 22,
-    "name": "Chocolate Cookies",
+    "name": { "en": "Chocolate Cookies", "hi": "चॉकलेट कुकीज़" },
     "price": "740",
     "price2": "1,480",
     "images": ["public/ChocolateCookies_1.jpg", "public/ChocolateCookies_2.jpg", "public/ChocolateCookies_3.jpg"],
     "tags": [],
-    "smallDesc": "Rich, thick cookies studded with chunky chocolate pieces—the ultimate luxurious treat for your next party.",
-    "description": "Elevate your dessert spread with these premium, deeply flavorful cocoa cookies. Their generous chocolate chunks make them a luxurious and satisfying centerpiece for any celebration.",
+    "smallDesc": {
+      "en": "Rich, thick cookies studded with chunky chocolate pieces—the ultimate luxurious treat for your next party.",
+      "hi": "समृद्ध, मोटी कुकीज़ जिसमें चंकी चॉकलेट पीस लगे हों—आपकी अगली पार्टी के लिए शानदार लग्ज़री ट्रीट।"
+    },
+    "description": {
+      "en": "Elevate your dessert spread with these premium, deeply flavorful cocoa cookies. Their generous chocolate chunks make them a luxurious and satisfying centerpiece for any celebration.",
+      "hi": "इन प्रीमियम, गहरे स्वाद वाली कोको कुकीज़ से अपने डेसर्ट स्प्रेड को बढ़ाएं। इनके उदार चॉकलेट पीस किसी भी उत्सव के लिए लग्ज़री और संतोषजनक केंद्र बिंदु हैं।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक्स" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 23,
-    "name": "Blueberry Cupcakes",
+    "name": { "en": "Blueberry Cupcakes", "hi": "ब्लूबेरी कपकेक्स" },
     "price": "740",
     "price2": "1,480",
     "images": ["public/BlueberryCupcakes_1.jpg", "public/BlueberryCupcakes_2.jpg", "public/BlueberryCupcakes_3.jpg"],
     "tags": [],
-    "smallDesc": "These moist, single-serving blueberry cakes are crowned with fruit—perfect for elegant dessert displays.",
-    "description": "Treat your guests to these individual blueberry delights. Their fluffy texture, juicy berries, and beautiful presentation make them an essential and convenient addition to any special occasion.",
+    "smallDesc": {
+      "en": "These moist, single-serving blueberry cakes are crowned with fruit—perfect for elegant dessert displays.",
+      "hi": "ये नमीदार, सिंगल-सर्विंग ब्लूबेरी केक फल के साथ सजाए गए—एलीगेंट डेसर्ट डिस्प्ले के लिए परफेक्ट।"
+    },
+    "description": {
+      "en": "Treat your guests to these individual blueberry delights. Their fluffy texture, juicy berries, and beautiful presentation make them an essential and convenient addition to any special occasion.",
+      "hi": "अपने मेहमानों को इन व्यक्तिगत ब्लूबेरी डिलाइट्स से खुश करें। उनकी फुल्ली टेक्सचर, रसदार बेरीज और सुंदर प्रस्तुति इन्हें किसी भी खास अवसर के लिए अनिवार्य और सुविधाजनक बनाती है।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक्स" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 24,
-    "name": "Chocolate Cupcakes",
+    "name": { "en": "Chocolate Cupcakes", "hi": "चॉकलेट कपकेक्स" },
     "price": "740",
     "price2": "1,480",
     "images": ["public/ChocolateCupcakes_1.jpg", "public/ChocolateCupcakes_2.jpg", "public/ChocolateCupcakes_3.jpg", "public/ChocolateCupcakes_4.jpg"],
     "tags": [],
-    "smallDesc": "Rich, cocoa-flavored cakes topped with generous chips—a sophisticated, individual treat with a lovely, tender crumb.",
-    "description": "Treat your guests to these premium, deeply cocoa-flavored cakes. Their fluffy, light texture and generous chocolate chunks make them a convenient, luxurious centerpiece for any celebration.",
+    "smallDesc": {
+      "en": "Rich, cocoa-flavored cakes topped with generous chips—a sophisticated, individual treat with a lovely, tender crumb.",
+      "hi": "समृद्ध, कोको फ्लेवर्ड केक उदार चिप्स के साथ—सुविधाजनक और सुंदर ट्रीट।"
+    },
+    "description": {
+      "en": "Treat your guests to these premium, deeply cocoa-flavored cakes. Their fluffy, light texture and generous chocolate chunks make them a convenient, luxurious centerpiece for any celebration.",
+      "hi": "इन प्रीमियम, गहरे कोको फ्लेवर्ड केक से अपने मेहमानों को खुश करें। इनकी फुल्ली, हल्की टेक्सचर और उदार चॉकलेट पीस किसी भी उत्सव के लिए सुविधाजनक और लग्ज़री केंद्र बिंदु बनाते हैं।"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Tea Cakes",
+    "category": { "en": "Tea Cakes", "hi": "टी केक्स" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
     "id": 25,
-    "name": "Wholewheat Cookies",
+    "name": { "en": "Wholewheat Cookies", "hi": "व्होलव्हीट कुकीज़" },
     "price": "740",
     "price2": "1,480",
     "images": ["public/WholewheatCookies_1.jpg", "public/WholewheatCookies_2.jpg", "public/WholewheatCookies_3.jpg"],
     "tags": ["Eggless"],
-    "smallDesc": "Text to be added",
-    "description": "Text to be added",
+    "smallDesc": {
+      "en": "Text to be added",
+      "hi": "यहाँ विवरण जोड़ना है"
+    },
+    "description": {
+      "en": "Text to be added",
+      "hi": "यहाँ विवरण जोड़ना है"
+    },
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": "Cookies",
+    "category": { "en": "Cookies", "hi": "कुकीज़" },
     "specialThisWeek": true,
-    "deliveryTime": "2 days",
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
-    "shelfLife": "10 days"
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   }
 ]
