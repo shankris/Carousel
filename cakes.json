@@ -361,18 +361,18 @@
   },
   {
     "id": 16,
-    "name": { "en": "Choco Chip Cookies", "hi": "चोको चिप कुकीज़" },
+    "name": { "en": "Almond Honney Tea Cake", "hi": "बादाम शहद चाय केक" },
     "price": "700",
     "price2": "1,380",
-    "images": ["public/ChocolateChipCookies_1.jpg", "public/ChocolateChipCookie_2.jpg"],
+    "images": ["public/AlmondHonneyTeaCake_1.jpg", "public/AlmondHonneyTeaCake_2.jpg", "public/AlmondHonneyTeaCake_3.jpg"],
     "tags": [],
     "smallDesc": {
-      "en": "Classic chocolate chip cookies with rich flavor and a perfect chewy-crispy texture—ideal for any celebration.",
-      "hi": "क्लासिक चोको चिप कुकीज़—रिच स्वाद और परफेक्ट च्यूई-क्रिस्पी टेक्सचर के साथ, हर मौके के लिए बेहतरीन।"
+      "en": "Celebrate with our Almond Honey Tea Cake! Moist, delicately sweet, and topped with crunchy almonds – pure birthday delight.",
+      "hi": "हमारे बादाम शहद चाय केक के साथ जश्न मनाएं! नम, हल्की मिठास वाला, और ऊपर से कुरकुरे बादाम से सजा हुआ – जन्मदिन का शुद्ध आनंद।"
     },
     "description": {
-      "en": "These indulgent chocolate chip cookies are baked to golden perfection, combining a soft, chewy center with a lightly crisp edge. Loaded with premium chocolate chips, each cookie delivers a rich, satisfying bite that makes it an irresistible crowd-pleaser for parties and celebrations.",
-      "hi": "ये शानदार चोको चिप कुकीज़ सुनहरा बेक की जाती हैं, जिनमें नरम च्यूई सेंटर और हल्का कुरकुरा किनारा है। प्रीमियम चॉकलेट चिप्स से भरी ये कुकीज़ हर पार्टी और सेलिब्रेशन के लिए एकदम परफेक्ट हैं।"
+      "en": "Elevate any celebration with our exquisite Almond Honey Tea Cake, a truly delightful and naturally sweet treat. This beautifully moist cake is infused with subtle honey notes and generously crowned with toasted almond slivers for an irresistible crunch. It's the perfect elegant choice for birthdays, afternoon tea, or simply to add a touch of sophisticated sweetness to your day.",
+      "hi": "हमारे उत्कृष्ट बादाम शहद चाय केक के साथ किसी भी उत्सव को खास बनाएं, यह वास्तव में एक स्वादिष्ट और प्राकृतिक रूप से मीठा व्यंजन है। यह खूबसूरती से नम केक शहद के हल्के स्वाद से भरा हुआ है और एक अनूठे क्रंच के लिए ऊपर से टोस्ट किए गए बादाम के टुकड़ों से सजाया गया है। यह जन्मदिन, दोपहर की चाय, या बस अपने दिन में परिष्कृत मिठास का स्पर्श जोड़ने के लिए एकदम सही और शानदार विकल्प है।"
     },
     "rating": 4.6,
     "popularity": 85,
@@ -386,18 +386,18 @@
 
   {
     "id": 17,
-    "name": { "en": "Wheat Jaggery Cookies", "hi": "गेहूं गुड़ कुकीज़" },
+    "name": { "en": "Chocolate Dry Fruit Cake", "hi": "चॉकलेट ड्राई फ्रूट केक" },
     "price": "700",
     "price2": "1,380",
-    "images": ["public/WheatJaggeryCookies_1.jpg", "public/WheatJaggeryCookies_2.jpg"],
+    "images": ["public/ChocolateDryFruitCake_1.jpg", "public/ChocolateDryFruitCake_2.jpg", "public/ChocolateDryFruitCake_3.jpg", "public/ChocolateDryFruitCake_4.jpg"],
     "tags": [],
     "smallDesc": {
-      "en": "Healthy, flavorful whole wheat cookies sweetened with jaggery—perfect for guilt-free snacking.",
-      "hi": "हेल्दी और स्वादिष्ट गेहूं की कुकीज़, गुड़ की हल्की मिठास के साथ—गिल्ट-फ्री स्नैकिंग के लिए परफेक्ट।"
+      "en": "Rich chocolate, crunchy almond flakes, and chips make this sliceable loaf a truly decadent party centerpiece.",
+      "hi": "भरपूर चॉकलेट, कुरकुरे बादाम के फ्लेक्स (टुकड़े), और चिप्स इस स्लाइस किए जा सकने वाले लोफ को वास्तव में एक शानदार पार्टी सेंटरपीस बनाते हैं।"
     },
     "description": {
-      "en": "Enjoy a wholesome treat with our wheat jaggery cookies, made using nutrient-rich whole wheat flour and naturally sweetened with pure jaggery. Each bite offers a warm, earthy flavor and a satisfying crunch, making them a healthier and tastier alternative to regular cookies.",
-      "hi": "हमारी गेहूं गुड़ कुकीज़ एक पौष्टिक और स्वादिष्ट स्नैक हैं, जिन्हें साबुत गेहूं के आटे और शुद्ध गुड़ से बनाया गया है। हर बाइट में हल्का मिट्टी जैसा स्वाद और शानदार क्रंच है, जो इन्हें सामान्य कुकीज़ से कहीं बेहतर बनाता है।"
+      "en": "This dense, flavorful chocolate dry fruit cake is generously studded with sliced almonds and chocolate chips, making it the ideal elegant dessert for any special occasion.",
+      "hi": "यह घना, स्वादिष्ट चॉकलेट ड्राई फ्रूट केक कटे हुए बादाम और चॉकलेट चिप्स से भरा हुआ है, जो इसे किसी भी खास मौके के लिए एक आदर्श शानदार मिठाई बनाता है।"
     },
     "rating": 4.7,
     "popularity": 79,
@@ -411,18 +411,18 @@
 
   {
     "id": 18,
-    "name": { "en": "Coconut Wheat Cookies", "hi": "कोकोनट व्हीट कुकीज़" },
+    "name": { "en": "Almond Cookies", "hi": "बादाम कुकीज़" },
     "price": "700",
     "price2": "1,380",
-    "images": ["public/CoconutWheatCookies_1.jpg"],
+    "images": ["public/AlmondCookies_1.jpg", "public/AlmondCookies_2.jpg", "public/AlmondCookies_3.jpg", "public/AlmondCookies_4.jpg"],
     "tags": [],
     "smallDesc": {
-      "en": "Delightfully crisp wheat cookies enriched with coconut for a flavorful, wholesome crunch.",
-      "hi": "नारियल से भरपूर कुरकुरी गेहूं कुकीज़—स्वाद और पौष्टिकता का बेहतरीन मेल।"
+      "en": "These luxurious almond cookies are the ultimate elegant treat for any special event or favor box.",
+      "hi": "ये शानदार बादाम कुकीज़ किसी भी खास अवसर या फ़ेवर बॉक्स (उपहार पेटी) के लिए बेहतरीन और सुरुचिपूर्ण (elegant) व्यंजन हैं।"
     },
     "description": {
-      "en": "A wholesome twist on a classic treat, our coconut wheat cookies combine the goodness of whole wheat with the naturally sweet aroma of premium coconut. Crisp, golden, and delightfully addictive, these cookies make a perfect anytime snack for the family.",
-      "hi": "हमारी कोकोनट व्हीट कुकीज़ गेहूं की पौष्टिकता और नारियल की प्राकृतिक मिठास का शानदार संयोजन हैं। सुनहरी, कुरकुरी और बेहद स्वादिष्ट, ये कुकीज़ परिवार के लिए हर समय की परफेक्ट स्नैक हैं।"
+      "en": "Elevate your dessert table instantly with these delicate, buttery cookies. Topped with crunchy almond flakes, they are a premium and unforgettable party delight.",
+      "hi": "कुरकुरे बादाम के फ्लेक्स से सजी ये नाज़ुक, मक्खन जैसी कुकीज़ आपकी डेज़र्ट टेबल को तुरंत खास बना देंगी। ये एक प्रीमियम और अविस्मरणीय पार्टी डिलाइट हैं।"
     },
     "rating": 4.5,
     "popularity": 72,
@@ -436,23 +436,23 @@
 
   {
     "id": 19,
-    "name": { "en": "Coconut Rusk", "hi": "कोकोनट रस्क" },
+    "name": { "en": "Jeera Cookies", "hi": "जीरा कुकीज़" },
     "price": "500",
     "price2": "980",
-    "images": ["public/CoconutRusk_1.jpg", "public/CoconutRusk_2.jpg", "public/CoconutRusk_3.jpg"],
+    "images": ["public/JeeraCookies_1.jpg", "public/JeeraCookies_2.jpg", "public/JeeraCookies_3.jpg"],
     "tags": [],
     "smallDesc": {
-      "en": "A flavorful, crunchy coconut rusk perfect for pairing with tea or coffee.",
-      "hi": "स्वादिष्ट और कुरकुरा कोकोनट रस्क—चाय या कॉफ़ी के साथ परफेक्ट।"
+      "en": "Savory, crisp Jeera cookies—the perfect, authentic accompaniment to an elegant Hi-tea gathering.",
+      "hi": "नमकीन, कुरकुरी जीरा कुकीज़ — एक शानदार हाई-टी (Hi-tea) सभा के लिए एकदम सही और प्रामाणिक (authentic) संगत।"
     },
     "description": {
-      "en": "These golden, crisp coconut rusks offer a delightful blend of sweetness and crunch. Made with premium coconut, they make an excellent accompaniment to warm beverages or a light snack on their own.",
-      "hi": "ये सुनहरे और कुरकुरे कोकोनट रस्क मिठास और क्रंच का बेहतरीन मेल हैं। प्रीमियम नारियल से बने ये रस्क चाय-कॉफ़ी के साथ या हल्के स्नैक के रूप में परफेक्ट हैं।"
+      "en": "These uniquely flavored, buttery Jeera cookies offer a delightful savory crunch. They are the ideal, premium treat to share at any luxurious Hi-tea party or special occasion.",
+      "hi": "ये अनूठे स्वाद वाली, मक्खन जैसी जीरा कुकीज़ एक स्वादिष्ट नमकीन क्रंच प्रदान करती हैं। ये किसी भी शानदार हाई-टी पार्टी या विशेष अवसर पर साझा करने के लिए आदर्श, प्रीमियम व्यंजन हैं।"
     },
     "rating": 4.4,
     "popularity": 69,
     "weight": "500 g, 1 Kg",
-    "category": { "en": "Rusk", "hi": "रस्क" },
+    "category": { "en": "Cookies", "hi": "कुकीज़" },
     "specialThisWeek": false,
     "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
