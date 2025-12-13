@@ -501,7 +501,7 @@
     "rating": 4.6,
     "popularity": 73,
     "weight": "500 g, 1 Kg",
-    "category": { "en": "Tea Cakes", "hi": "टी केक्स" },
+    "category": { "en": "Cookies", "hi": "कुकीज़" },
     "specialThisWeek": true,
     "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
