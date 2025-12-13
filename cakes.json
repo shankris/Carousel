@@ -361,7 +361,7 @@
   },
   {
     "id": 16,
-    "name": { "en": "Almond Honney Tea Cake", "hi": "बादाम शहद चाय केक" },
+    "name": { "en": "Almond Honney Cake", "hi": "बादाम शहद केक" },
     "price": "700",
     "price2": "1,380",
     "images": ["public/AlmondHonneyTeaCake_1.jpg", "public/AlmondHonneyTeaCake_2.jpg", "public/AlmondHonneyTeaCake_3.jpg"],
