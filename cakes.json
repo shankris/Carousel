@@ -216,6 +216,31 @@
     "shelfLife": { "en": "3 days", "hi": "3 दिन" }
   },
   {
+    "id": 26,
+    "name": { "en": "Blueberry Cake - Eggless", "hi": "ब्लूबेरी केक - एगलेस" },
+    "price": "850",
+    "price2": "1,700",
+    "images": ["public/BlueberryCakeEggless_1.jpg", "public/BlueberryCakeEggless_2.jpg", "public/BlueberryCakeEggless_3.jpg"],
+    "tags": ["Eggless"],
+    "smallDesc": {
+      "en": "Moist, eggless blueberry cake bursting with fresh fruit and baked to golden perfection. A delicious, inclusive treat for any celebration.",
+      "hi": "नम, अंडा रहित (एगलेस) ब्लूबेरी केक जो ताज़े फलों से भरा है और सुनहरे रूप से बेक किया गया है। किसी भी जश्न के लिए एक स्वादिष्ट, सबको पसंद आने वाला (इन्क्लूसिव) व्यंजन।"
+    },
+    "description": {
+      "en": "Indulge in our beautifully baked, moist, and flavorful eggless blueberry cake. Studded with juicy, whole blueberries and featuring a tender, golden crumb. The perfect, crowd-pleasing dessert.",
+      "hi": "हमारे खूबसूरती से बेक किए गए, नम और स्वादिष्ट अंडा रहित (एगलेस) ब्लूबेरी केक का आनंद लें। यह रसीली, पूरी ब्लूबेरी से भरा है और इसमें एक कोमल, सुनहरा क्रम्ब (अंदर का हिस्सा) है। यह हर आहार के लिए एकदम सही, सबको ख़ुश करने वाला मीठा व्यंजन है।"
+    },
+    "rating": 4.8,
+    "popularity": 89,
+    "weight": "500 g, 1 Kg",
+    "category": { "en": "Tea Cakes", "hi": "टी केक" },
+    "specialThisWeek": false,
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
+    "bestSeller": true,
+    "shelfLife": { "en": "3 days", "hi": "3 दिन" }
+  },
+
+  {
     "id": 10,
     "name": { "en": "Ragi Cake", "hi": "रागी केक" },
     "price": "680",
