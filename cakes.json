@@ -216,7 +216,7 @@
     "shelfLife": { "en": "3 days", "hi": "3 दिन" }
   },
   {
-    "id": 26,
+    "id": 10,
     "name": { "en": "Blueberry Cake - Eggless", "hi": "ब्लूबेरी केक - एगलेस" },
     "price": "850",
     "price2": "1,700",
@@ -241,7 +241,7 @@
   },
 
   {
-    "id": 10,
+    "id": 11,
     "name": { "en": "Ragi Cake", "hi": "रागी केक" },
     "price": "680",
     "price2": "1,190",
@@ -265,7 +265,7 @@
     "shelfLife": { "en": "20 days", "hi": "20 दिन" }
   },
   {
-    "id": 11,
+    "id": 12,
     "name": { "en": "Dry Fruit Cake", "hi": "ड्राई फ्रूट केक" },
     "price": "740",
     "price2": "1,480",
@@ -289,7 +289,7 @@
     "shelfLife": { "en": "4 days", "hi": "4 दिन" }
   },
   {
-    "id": 12,
+    "id": 13,
     "name": { "en": "Chocolate Brownie", "hi": "चॉकलेट ब्राउनी" },
     "price": "600",
     "price2": "1,200",
@@ -313,7 +313,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 13,
+    "id": 14,
     "name": { "en": "Eggless Chocolate Brownie", "hi": "एगलेस चॉकलेट ब्राउनी" },
     "price": "700",
     "price2": "1,300",
@@ -337,7 +337,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 14,
+    "id": 15,
     "name": { "en": "Walnut Brownie", "hi": "वॉलनट ब्राउनी" },
     "price": "720",
     "price2": "1,400",
@@ -361,7 +361,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 15,
+    "id": 16,
     "name": { "en": "Almond Brownie", "hi": "आल्मंड ब्राउनी" },
     "price": "720",
     "price2": "1,400",
@@ -385,7 +385,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 16,
+    "id": 17,
     "name": { "en": "Almond Honney Cake", "hi": "बादाम शहद केक" },
     "price": "700",
     "price2": "1,380",
@@ -410,7 +410,7 @@
   },
 
   {
-    "id": 17,
+    "id": 18,
     "name": { "en": "Chocolate Dry Fruit Cake", "hi": "चॉकलेट ड्राई फ्रूट केक" },
     "price": "700",
     "price2": "1,380",
@@ -435,7 +435,7 @@
   },
 
   {
-    "id": 18,
+    "id": 19,
     "name": { "en": "Almond Cookies", "hi": "बादाम कुकीज़" },
     "price": "700",
     "price2": "1,380",
@@ -460,7 +460,7 @@
   },
 
   {
-    "id": 19,
+    "id": 20,
     "name": { "en": "Jeera Cookies", "hi": "जीरा कुकीज़" },
     "price": "500",
     "price2": "980",
@@ -485,7 +485,7 @@
   },
 
   {
-    "id": 20,
+    "id": 21,
     "name": { "en": "Coconut Cookies", "hi": "कोकोनट कुकीज़" },
     "price": "740",
     "price2": "1,480",
@@ -509,7 +509,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 21,
+    "id": 22,
     "name": { "en": "Kaju Cookies", "hi": "काजू कुकीज़" },
     "price": "740",
     "price2": "1,480",
@@ -533,7 +533,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 22,
+    "id": 23,
     "name": { "en": "Chocolate Cookies", "hi": "चॉकलेट कुकीज़" },
     "price": "740",
     "price2": "1,480",
@@ -557,7 +557,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 23,
+    "id": 24,
     "name": { "en": "Blueberry Cupcakes", "hi": "ब्लूबेरी कपकेक्स" },
     "price": "740",
     "price2": "1,480",
@@ -581,7 +581,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 24,
+    "id": 25,
     "name": { "en": "Chocolate Cupcakes", "hi": "चॉकलेट कपकेक्स" },
     "price": "740",
     "price2": "1,480",
@@ -605,7 +605,7 @@
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   },
   {
-    "id": 25,
+    "id": 26,
     "name": { "en": "Wholewheat Cookies", "hi": "व्होलव्हीट कुकीज़" },
     "price": "740",
     "price2": "1,480",
@@ -624,6 +624,30 @@
     "weight": "500 g, 1 Kg",
     "category": { "en": "Cookies", "hi": "कुकीज़" },
     "specialThisWeek": true,
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
+    "bestSeller": false,
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
+  },
+  {
+    "id": 27,
+    "name": { "en": "Strawberry - Eggless Cake", "hi": "स्ट्राबेरी - बिना अंडे का केक" },
+    "price": "740",
+    "price2": "1,480",
+    "images": ["public/Strawberry_Eggless_1.jpg", "public/Strawberry_Eggless_2.jpg", "public/Strawberry_Eggless_3.jpg"],
+    "tags": ["Eggless"],
+    "smallDesc": {
+      "en": "Delicious, eggless strawberry sponge cake, topped with fresh strawberry fruit slices.",
+      "hi": "क स्वादिष्ट, बिना अंडे का स्ट्रॉबेरी स्पंज केक, जिसके ऊपर ताजे स्ट्रॉबेरी के टुकड़े है।"
+    },
+    "description": {
+      "en": "A delightful, eggless strawberry sponge cake crafted with fresh fruit toppings. This rustic treat features a light, airy texture, topped with sliced strawberries and served elegantly on a golden disk.",
+      "hi": "एक शानदार, बिना अंडे का स्ट्रॉबेरी स्पंज केक जिसे ताजे फलों से सजाया गया है। इस हल्के और नरम केक के ऊपर स्ट्रॉबेरी के टुकड़े हैं और इसे सुनहरे बेस पर परोसा गया है।"
+    },
+    "rating": 4.6,
+    "popularity": 73,
+    "weight": "500 g, 1 Kg",
+    "category": { "en": "Tea Cakes", "hi": "टी केक्स" },
+    "specialThisWeek": false,
     "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
