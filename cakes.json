@@ -651,5 +651,29 @@
     "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
     "bestSeller": false,
     "shelfLife": { "en": "10 days", "hi": "10 दिन" }
+  },
+  {
+    "id": 28,
+    "name": { "en": "Double Chocolate Tea Cake", "hi": "डबल चॉकलेट टी केक" },
+    "price": "740",
+    "price2": "1,480",
+    "images": ["public/DoubleChocolate1.jpg", "public/DoubleChocolate2.jpg", "public/DoubleChocolate3.jpg", "public/DoubleChocolate4.jpg", "public/DoubleChocolate5.jpg"],
+    "tags": ["Eggless"],
+    "smallDesc": {
+      "en": "A cocoa masterpiece: decadent double chocolate crafted to elevate your finest moments.",
+      "hi": "चॉकलेट का शाही अंदाज़: आपके खास पलों की रौनक बढ़ाने के लिए एक लाजवाब पेशकश।"
+    },
+    "description": {
+      "en": "An exquisite celebration of cocoa: a decadent, double-layered chocolate masterpiece designed to elevate your most special moments.",
+      "hi": "कोको का बेहतरीन संगम: चॉकलेट की परतों से भरा एक लाजवाब केक, जो आपके खास जश्न के हर पल को और भी यादगार बना देगा।"
+    },
+    "rating": 4.6,
+    "popularity": 73,
+    "weight": "500 g, 1 Kg",
+    "category": { "en": "Tea Cakes", "hi": "टी केक्स" },
+    "specialThisWeek": false,
+    "deliveryTime": { "en": "2 days", "hi": "2 दिन" },
+    "bestSeller": false,
+    "shelfLife": { "en": "10 days", "hi": "10 दिन" }
   }
 ]
